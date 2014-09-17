@@ -1,0 +1,105 @@
+component vehbod_minput
+% Vehicle Body :4.0
+% Represents a two-axle vehicle body in longitudinal motion. The
+% block accounts for body mass, aerodynamic drag, road incline, and
+% weight distribution between axles due to acceleration and road
+% profile. The vehicle does not pitch or move vertically relative to
+% the ground.
+%
+% Connection H is the mechanical translational conserving port associated with
+% the horizontal motion of the vehicle body. The resulting traction
+% motion developed by tires should be connected to this port.
+% Connections V, NF, and NR are physical signal output ports for
+% vehicle velocity and front and rear normal wheel forces, respectively. Wheel forces
+% are considered positive if acting downwards. Connections m, W and beta
+% are physical signal input ports corresponding to mass, headwind speed and
+% road inclination angle, respectively.
+
+% Copyright 2005-2013 The MathWorks, Inc.
+
+nodes
+    H = foundation.mechanical.translational.translational; % H:top
+end
+
+outputs
+    V =  { 0, 'm/s' }; % V:top
+    NR = { 0, 'N' };   % NR:bottom
+    NF = { 0, 'N' };   % NF:bottom
+end
+
+inputs
+    mass = { 1200, 'kg' }; % m:bottom
+    wind = { 0, 'm/s' }; % W:top
+    beta = { 0, 'rad' }; % beta:bottom
+end
+
+
+parameters
+    %mass = { 1200, 'kg' }; % Mass
+    n_w  = { 2,    '1' };  % Number of wheels per axle
+    x_f  = { 1.4,  'm' };  % Horizontal distance from CG to front axle
+    x_r  = { 1.6,  'm' };  % Horizontal distance from CG to rear axle
+    y_c  = { 0.5,  'm' };  % CG height above ground
+    area = { 3,    'm^2'}; % Frontal area
+    Cd   = { 0.4,  '1' };  % Drag coefficient
+    v0   = { 0,    'm/s'}; % Initial velocity
+end
+
+parameters(Hidden=true)
+    g = { 9.81, 'm/s^2' };    % Acceleration due to gravity
+    rho = { 1.18, 'kg/m^3' }; % Air density
+    mass_min = { 1e-3, 'kg' }; % minimum allowable mass
+end
+
+variables(Access = protected)
+    v = { 0, 'm/s' };       % Velocity
+    f = { 0, 'N' };         % Force
+end
+
+function setup
+    across(  v, H.v, [] );
+    through( f, H.f, [] );
+    % Range checking
+    %if mass <= 0, pm_error('simscape:GreaterThanZero','Mass'), end
+    if n_w < 1,   pm_error('simscape:GreaterThanOrEqual','Number of wheels per axle','1'), end
+    if area <= 0, pm_error('simscape:GreaterThanZero','Frontal area'), end
+    if x_f  <= 0, pm_error('simscape:GreaterThanZero','Horizontal distance from CG to front axle'), end
+    if x_r  <= 0, pm_error('simscape:GreaterThanZero','Horizontal distance from CG to rear axle'), end
+    if y_c  <= 0, pm_error('simscape:GreaterThanZero','CG height above ground'), end
+    if Cd   <  0, pm_error('simscape:GreaterThanOrEqualToZero','Drag coefficient'), end
+
+    % Initial conditions
+    v = v0;
+end
+
+equations
+    if mass > mass_min
+        let
+            mg_sin = mass * g * sin(beta);
+            mg_cos = mass * g * cos(beta);
+            Cd_force = 0.5*Cd*area*rho*(v + wind)^2 * sign(v + wind);
+            % Projection of forces except tractive effort on X-axis
+            Fx = mg_sin + Cd_force + mass * v.der;
+        in
+            f  == Fx;
+            NF == (mg_cos * x_r - f * y_c) / (n_w * (x_f+x_r));
+            NR == (mg_cos/n_w - NF);
+            V  == v;
+        end
+    else
+        let
+            mg_sin = mass_min * g * sin(beta);
+            mg_cos = mass_min * g * cos(beta);
+            Cd_force = 0.5*Cd*area*rho*(v + wind)^2 * sign(v + wind);
+            % Projection of forces except tractive effort on X-axis
+            Fx = mg_sin + Cd_force + mass_min * v.der;
+        in
+            f  == Fx;
+            NF == (mg_cos * x_r - f * y_c) / (n_w * (x_f+x_r));
+            NR == (mg_cos/n_w - NF);
+            V  == v;
+        end
+    end    
+end
+
+end
