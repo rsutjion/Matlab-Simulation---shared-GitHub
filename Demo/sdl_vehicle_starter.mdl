@@ -1,0 +1,4755 @@
+Model {
+  Name			  "sdl_vehicle_starter"
+  Version		  7.9
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.661"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  Description		  "Vehicle With Automatic Transmission\n\nThis example shows a complete vehicle with SimDriveline(TM) b"
+  "locks, from\nengine, drivetrain, and transmission, to tire and vehicle dynamics. The\ntransmission controller is pre"
+  "programmed, but can be changed to respond to\nengine and vehicle behavior.\n\n\n\n\n\nCopyright 2008-2012 The MathWo"
+  "rks, Inc.\n"
+  SavedCharacterEncoding  "windows-1252"
+  PreLoadFcn		  "num_fric_surf = 6;\neff_tor_rad = 0.4;\nengagement_area = 0.0025;\npeak_normal = 0.55;\nfric_coeff = "
+  "0.5;\nclutchRise = 0.1;\nvelTol = 1e-3;\npressThresh = 0.05;\np0 = 20e5;\n\n\n"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Active"
+  MaxMDLFileLineLength	  120
+  CloseFcn		  "clear num_fric_surf eff_tor_rad engagement_area\nclear peak_normal fric_coeff clutchRise\nclear velTol "
+  "pressThresh p0 "
+  UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
+  PhysicalModelingChecksum "579449764"
+  PhysicalModelingParameterChecksum "117582941"
+  PhysicalModelingProducts "SimDriveline|Simscape"
+  Created		  "Mon Dec 01 14:45:43 2003"
+  Creator		  "MathWorks"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "sbiagion"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jan 16 09:34:14 2013"
+  RTWModifiedTimeStamp	  280229035
+  ModelVersionFormat	  "1.%<AutoIncrement:661>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  on
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.12.0"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.12.0"
+	  StartTime		  "0.0"
+	  StopTime		  "150"
+	  AbsTol		  "auto"
+	  FixedStep		  "1e-3"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "0"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-4"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode23t"
+	  SolverName		  "ode23t"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Adaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.12.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  off
+	  DSMLogging		  off
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsOut"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.12.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg on
+	  CheckExecutionContextRuntimeOutputMsg	on
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "none"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "none"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Enable All"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.12.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "LittleEndian"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "MATLAB Host"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.12.0"
+	  UpdateModelReferenceTargets "IfOutOfDate"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.12.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "GenerateSLWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  Description		  "Generic Real-Time Target"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  "grt_make_rtw_hook"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		21
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"PortableWordSizes"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      CodeExecutionProfiling  off
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SSC.SimscapeCC {
+	  $ObjectID		  12
+	  Version		  "1.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Name"
+	    PropName		    "DisabledProps"
+	  }
+	  Name			  "Simscape"
+	  EditingMode		  "Full"
+	  ExplicitSolverDiagnosticOptions "warning"
+	  GlobalZcOffDiagnosticOptions "warning"
+	  SimscapeLogType	  "none"
+	  SimscapeLogName	  "simlog"
+	  SimscapeLogDecimation	  1
+	  SimscapeLogLimitData	  on
+	  SimscapeLogDataHistory  5000
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition     [ 480, 9, 1433, 995 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  ExplicitPartitioning	  off
+  WSMdlFileData		  "DataTag0"
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      GotoTagVisibility
+      GotoTag		      "A"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimitSource	      "Dialog"
+      UpperLimit	      "0.5"
+      LowerLimitSource	      "Dialog"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
+  }
+  System {
+    Name		    "sdl_vehicle_starter"
+    Location		    [241, 110, 1271, 893]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "349"
+    Block {
+      BlockType		      SubSystem
+      Name		      "CR-CR\n4-speed"
+      SID		      "245"
+      Ports		      [1, 0, 0, 0, 0, 1, 1]
+      Position		      [405, 102, 555, 273]
+      ZOrder		      -1
+      BackgroundColor	      "lightBlue"
+      OpenFcn		      "open_system(gcbh,'force');"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "CR-CR 4-Speed"
+      MaskDescription	      "This is a template for a CR-CR 4-speed transmission. Copy it to your model, open it as a "
+      "subsystem, and modify it for your use."
+      MaskHelp		      "web(drive_help);"
+      MaskInitialization      "drive_preinitmask(); Icon = drive_crcrgearblock('Mask');"
+      MaskSelfModifiable      on
+      MaskDisplay	      "plot(Icon.x1,Icon.y1);\nplot(Icon.x1_1,Icon.y1_1);\nplot(Icon.x2,Icon.y2);\nplot(Icon.x3,Icon"
+      ".y3);\nplot(Icon.x3_1,Icon.y3_1);\nplot(Icon.x4,Icon.y4);\nplot(Icon.x5,Icon.y5);\nplot(Icon.x6,Icon.y6);\nplot("
+      "Icon.x7,Icon.y7);\nplot(Icon.x8,Icon.y8);\nplot(Icon.x9,Icon.y9);\nplot(Icon.x10,Icon.y10);\nplot(Icon.x11,Icon."
+      "y11);\nplot(Icon.x12,Icon.y12);\nplot(Icon.x13,Icon.y13);\nplot(Icon.x14,Icon.y14);\nplot(Icon.x15,Icon.y15);\np"
+      "lot(Icon.x16,Icon.y16);\nplot(Icon.x16_1,Icon.y16_1);\nplot(Icon.x16_2,Icon.y16_2);\nplot(Icon.x17,Icon.y17);\np"
+      "lot(Icon.x18,Icon.y18);\nplot(Icon.x18_1,Icon.y18_1);\nplot(Icon.x18_2,Icon.y18_2);\nplot(Icon.x19,Icon.y19);\np"
+      "lot(Icon.x20,Icon.y20);\nplot(Icon.x21,Icon.y21);\nplot(Icon.x22,Icon.y22);\nplot(Icon.x23,Icon.y23);\nplot(Icon"
+      ".x24,Icon.y24);\nplot(Icon.x25,Icon.y25);\nplot(Icon.x26,Icon.y26);\nplot(Icon.x27,Icon.y27);\nplot(Icon.x28,Ico"
+      "n.y28);\nplot(Icon.x29,Icon.y29);\n\nplot(Icon.LowerLeftx,Icon.LowerLefty);\nplot(Icon.UpperRightx,Icon.UpperRig"
+      "hty);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"CR-CR\n4-speed"
+	Location		[12, 45, 964, 811]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"110"
+	SIDPrevWatermark	"110"
+	Block {
+	  BlockType		  Inport
+	  Name			  "P"
+	  SID			  "245:1"
+	  Position		  [780, 373, 810, 387]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Clutch\nPressures"
+	  SID			  "245:2"
+	  Ports			  [1, 5]
+	  Position		  [755, 326, 760, 434]
+	  ZOrder		  -2
+	  BlockMirror		  on
+	  BackgroundColor	  "black"
+	  Outputs		  "5"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Clutch A"
+	  SID			  "245:110"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [160, 456, 210, 489]
+	  ZOrder		  -3
+	  ForegroundColor	  "red"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Clutches/Disk Friction Clutch"
+	  SourceType		  "Disk Friction Clutch"
+	  SourceFile		  "sdl.clutches.disk_friction_clutch"
+	  ComponentPath		  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariants	  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariantNames	  "disk_friction_clutch"
+	  ClassName		  "disk_friction_clutch"
+	  SchemaVersion		  "1"
+	  geometry_model	  "1"
+	  geometry_model_unit	  "1"
+	  r_eff			  "eff_tor_rad"
+	  r_eff_unit		  "m"
+	  d_o			  "0.15"
+	  d_o_unit		  "m"
+	  d_i			  "0.1"
+	  d_i_unit		  "m"
+	  nS			  "num_fric_surf"
+	  nS_unit		  "1"
+	  piston_area		  "engagement_area"
+	  piston_area_unit	  "m^2"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  mu_coulomb		  "fric_coeff"
+	  mu_coulomb_unit	  "1"
+	  mu_w_vector		  "[ 0 0.1 0.2 0.3 0.4 0.5 1 2 5 10 100 1000 ]"
+	  mu_w_vector_unit	  "rad/s"
+	  mu_coulomb_vector	  "[ 0.29 0.28 0.26 0.22 0.21 0.2 0.2 0.19 0.19 0.19 0.19 0.19 ]"
+	  mu_coulomb_vector_unit  "1"
+	  mu_interp_method	  "1"
+	  mu_interp_method_unit	  "1"
+	  mu_extrap_method	  "1"
+	  mu_extrap_method_unit	  "1"
+	  mu_static		  "peak_normal"
+	  mu_static_unit	  "1"
+	  d_f			  "1"
+	  d_f_unit		  "1"
+	  w_tol			  "velTol"
+	  w_tol_unit		  "rad/s"
+	  pressure_min		  "pressThresh*p0"
+	  pressure_min_unit	  "Pa"
+	  mu_visc		  "0"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  initial_state_locked	  "1"
+	  initial_state_locked_unit "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Clutch B"
+	  SID			  "245:107"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [160, 66, 210, 99]
+	  ZOrder		  -4
+	  ForegroundColor	  "green"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Clutches/Disk Friction Clutch"
+	  SourceType		  "Disk Friction Clutch"
+	  SourceFile		  "sdl.clutches.disk_friction_clutch"
+	  ComponentPath		  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariants	  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariantNames	  "disk_friction_clutch"
+	  ClassName		  "disk_friction_clutch"
+	  SchemaVersion		  "1"
+	  geometry_model	  "1"
+	  geometry_model_unit	  "1"
+	  r_eff			  "eff_tor_rad"
+	  r_eff_unit		  "m"
+	  d_o			  "0.15"
+	  d_o_unit		  "m"
+	  d_i			  "0.1"
+	  d_i_unit		  "m"
+	  nS			  "num_fric_surf"
+	  nS_unit		  "1"
+	  piston_area		  "engagement_area"
+	  piston_area_unit	  "m^2"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  mu_coulomb		  "fric_coeff"
+	  mu_coulomb_unit	  "1"
+	  mu_w_vector		  "[ 0 0.1 0.2 0.3 0.4 0.5 1 2 5 10 100 1000 ]"
+	  mu_w_vector_unit	  "rad/s"
+	  mu_coulomb_vector	  "[ 0.29 0.28 0.26 0.22 0.21 0.2 0.2 0.19 0.19 0.19 0.19 0.19 ]"
+	  mu_coulomb_vector_unit  "1"
+	  mu_interp_method	  "1"
+	  mu_interp_method_unit	  "1"
+	  mu_extrap_method	  "1"
+	  mu_extrap_method_unit	  "1"
+	  mu_static		  "peak_normal"
+	  mu_static_unit	  "1"
+	  d_f			  "1"
+	  d_f_unit		  "1"
+	  w_tol			  "velTol"
+	  w_tol_unit		  "rad/s"
+	  pressure_min		  "pressThresh*p0"
+	  pressure_min_unit	  "Pa"
+	  mu_visc		  "0"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  initial_state_locked	  "0"
+	  initial_state_locked_unit "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Clutch C"
+	  SID			  "245:108"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [485, 346, 535, 379]
+	  ZOrder		  -5
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Clutches/Disk Friction Clutch"
+	  SourceType		  "Disk Friction Clutch"
+	  SourceFile		  "sdl.clutches.disk_friction_clutch"
+	  ComponentPath		  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariants	  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariantNames	  "disk_friction_clutch"
+	  ClassName		  "disk_friction_clutch"
+	  SchemaVersion		  "1"
+	  geometry_model	  "1"
+	  geometry_model_unit	  "1"
+	  r_eff			  "eff_tor_rad"
+	  r_eff_unit		  "m"
+	  d_o			  "0.15"
+	  d_o_unit		  "m"
+	  d_i			  "0.1"
+	  d_i_unit		  "m"
+	  nS			  "num_fric_surf"
+	  nS_unit		  "1"
+	  piston_area		  "engagement_area"
+	  piston_area_unit	  "m^2"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  mu_coulomb		  "fric_coeff"
+	  mu_coulomb_unit	  "1"
+	  mu_w_vector		  "[ 0 0.1 0.2 0.3 0.4 0.5 1 2 5 10 100 1000 ]"
+	  mu_w_vector_unit	  "rad/s"
+	  mu_coulomb_vector	  "[ 0.29 0.28 0.26 0.22 0.21 0.2 0.2 0.19 0.19 0.19 0.19 0.19 ]"
+	  mu_coulomb_vector_unit  "1"
+	  mu_interp_method	  "1"
+	  mu_interp_method_unit	  "1"
+	  mu_extrap_method	  "1"
+	  mu_extrap_method_unit	  "1"
+	  mu_static		  "peak_normal"
+	  mu_static_unit	  "1"
+	  d_f			  "1"
+	  d_f_unit		  "1"
+	  w_tol			  "velTol"
+	  w_tol_unit		  "rad/s"
+	  pressure_min		  "pressThresh*p0"
+	  pressure_min_unit	  "Pa"
+	  mu_visc		  "0"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  initial_state_locked	  "0"
+	  initial_state_locked_unit "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Clutch D"
+	  SID			  "245:106"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [480, 66, 530, 99]
+	  ZOrder		  -6
+	  BlockMirror		  on
+	  ForegroundColor	  "cyan"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Clutches/Disk Friction Clutch"
+	  SourceType		  "Disk Friction Clutch"
+	  SourceFile		  "sdl.clutches.disk_friction_clutch"
+	  ComponentPath		  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariants	  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariantNames	  "disk_friction_clutch"
+	  ClassName		  "disk_friction_clutch"
+	  SchemaVersion		  "1"
+	  geometry_model	  "1"
+	  geometry_model_unit	  "1"
+	  r_eff			  "eff_tor_rad"
+	  r_eff_unit		  "m"
+	  d_o			  "0.15"
+	  d_o_unit		  "m"
+	  d_i			  "0.1"
+	  d_i_unit		  "m"
+	  nS			  "num_fric_surf"
+	  nS_unit		  "1"
+	  piston_area		  "engagement_area"
+	  piston_area_unit	  "m^2"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  mu_coulomb		  "fric_coeff"
+	  mu_coulomb_unit	  "1"
+	  mu_w_vector		  "[ 0 0.1 0.2 0.3 0.4 0.5 1 2 5 10 100 1000 ]"
+	  mu_w_vector_unit	  "rad/s"
+	  mu_coulomb_vector	  "[ 0.29 0.28 0.26 0.22 0.21 0.2 0.2 0.19 0.19 0.19 0.19 0.19 ]"
+	  mu_coulomb_vector_unit  "1"
+	  mu_interp_method	  "1"
+	  mu_interp_method_unit	  "1"
+	  mu_extrap_method	  "1"
+	  mu_extrap_method_unit	  "1"
+	  mu_static		  "peak_normal"
+	  mu_static_unit	  "1"
+	  d_f			  "1"
+	  d_f_unit		  "1"
+	  w_tol			  "velTol"
+	  w_tol_unit		  "rad/s"
+	  pressure_min		  "pressThresh*p0"
+	  pressure_min_unit	  "Pa"
+	  mu_visc		  "0"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  initial_state_locked	  "1"
+	  initial_state_locked_unit "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Clutch R"
+	  SID			  "245:109"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [160, 346, 210, 379]
+	  ZOrder		  -7
+	  ForegroundColor	  "orange"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Clutches/Disk Friction Clutch"
+	  SourceType		  "Disk Friction Clutch"
+	  SourceFile		  "sdl.clutches.disk_friction_clutch"
+	  ComponentPath		  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariants	  "sdl.clutches.disk_friction_clutch"
+	  ComponentVariantNames	  "disk_friction_clutch"
+	  ClassName		  "disk_friction_clutch"
+	  SchemaVersion		  "1"
+	  geometry_model	  "1"
+	  geometry_model_unit	  "1"
+	  r_eff			  "eff_tor_rad"
+	  r_eff_unit		  "m"
+	  d_o			  "0.15"
+	  d_o_unit		  "m"
+	  d_i			  "0.1"
+	  d_i_unit		  "m"
+	  nS			  "num_fric_surf"
+	  nS_unit		  "1"
+	  piston_area		  "engagement_area"
+	  piston_area_unit	  "m^2"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  mu_coulomb		  "fric_coeff"
+	  mu_coulomb_unit	  "1"
+	  mu_w_vector		  "[ 0 0.1 0.2 0.3 0.4 0.5 1 2 5 10 100 1000 ]"
+	  mu_w_vector_unit	  "rad/s"
+	  mu_coulomb_vector	  "[ 0.29 0.28 0.26 0.22 0.21 0.2 0.2 0.19 0.19 0.19 0.19 0.19 ]"
+	  mu_coulomb_vector_unit  "1"
+	  mu_interp_method	  "1"
+	  mu_interp_method_unit	  "1"
+	  mu_extrap_method	  "1"
+	  mu_extrap_method_unit	  "1"
+	  mu_static		  "peak_normal"
+	  mu_static_unit	  "1"
+	  d_f			  "1"
+	  d_f_unit		  "1"
+	  w_tol			  "velTol"
+	  w_tol_unit		  "rad/s"
+	  pressure_min		  "pressThresh*p0"
+	  pressure_min_unit	  "Pa"
+	  mu_visc		  "0"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  initial_state_locked	  "0"
+	  initial_state_locked_unit "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  SID			  "245:22"
+	  Position		  [30, 306, 65, 324]
+	  ZOrder		  -8
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "R"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  SID			  "245:26"
+	  Position		  [30, 426, 65, 444]
+	  ZOrder		  -9
+	  ForegroundColor	  "red"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "A"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  SID			  "245:27"
+	  Position		  [30, 26, 65, 44]
+	  ZOrder		  -10
+	  ForegroundColor	  "green"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "B"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  SID			  "245:28"
+	  Position		  [610, 346, 645, 364]
+	  ZOrder		  -11
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "C"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  SID			  "245:29"
+	  Position		  [615, 66, 650, 84]
+	  ZOrder		  -12
+	  BlockMirror		  on
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "D"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  SID			  "245:30"
+	  Position		  [690, 330, 725, 350]
+	  ZOrder		  -13
+	  BlockMirror		  on
+	  ForegroundColor	  "red"
+	  ShowName		  off
+	  GotoTag		  "A"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  GotoTagVisibility
+	  Name			  "Goto Tag\nVisibility2"
+	  SID			  "245:31"
+	  Position		  [30, 322, 59, 339]
+	  ZOrder		  -14
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "R"
+	}
+	Block {
+	  BlockType		  GotoTagVisibility
+	  Name			  "Goto Tag\nVisibility4"
+	  SID			  "245:32"
+	  Position		  [620, 82, 649, 99]
+	  ZOrder		  -15
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "D"
+	}
+	Block {
+	  BlockType		  GotoTagVisibility
+	  Name			  "Goto Tag\nVisibility6"
+	  SID			  "245:33"
+	  Position		  [30, 442, 59, 459]
+	  ZOrder		  -16
+	  ForegroundColor	  "red"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  GotoTagVisibility
+	  Name			  "Goto Tag\nVisibility7"
+	  SID			  "245:34"
+	  Position		  [30, 42, 59, 59]
+	  ZOrder		  -17
+	  ForegroundColor	  "green"
+	  ShowName		  off
+	  GotoTag		  "B"
+	}
+	Block {
+	  BlockType		  GotoTagVisibility
+	  Name			  "Goto Tag\nVisibility8"
+	  SID			  "245:35"
+	  Position		  [615, 362, 644, 379]
+	  ZOrder		  -18
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "C"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  "245:36"
+	  Position		  [690, 350, 725, 370]
+	  ZOrder		  -19
+	  BlockMirror		  on
+	  ForegroundColor	  "green"
+	  ShowName		  off
+	  GotoTag		  "B"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  "245:47"
+	  Position		  [690, 370, 725, 390]
+	  ZOrder		  -20
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "C"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  SID			  "245:48"
+	  Position		  [690, 390, 725, 410]
+	  ZOrder		  -21
+	  BlockMirror		  on
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "D"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  SID			  "245:49"
+	  Position		  [690, 410, 725, 430]
+	  ZOrder		  -22
+	  BlockMirror		  on
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "R"
+	  TagVisibility		  "scoped"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Input\nPlanetary Gear "
+	  SID			  "245:82"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [255, 137, 310, 193]
+	  ZOrder		  -23
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Gears/Planetary Gear"
+	  SourceType		  "Planetary Gear"
+	  SourceFile		  "sdl.gears.planetary_gear"
+	  ComponentPath		  "sdl.gears.planetary_gear"
+	  ComponentVariants	  "sdl.gears.planetary_gear"
+	  ComponentVariantNames	  "planetary_gear"
+	  ClassName		  "planetary_gear"
+	  SchemaVersion		  "1"
+	  rs_ratio		  "2.2258"
+	  rs_ratio_unit		  "1"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  efficiency		  "[ 0.96 0.98 ]"
+	  efficiency_unit	  "1"
+	  mu_visc		  "[ 0 0 ]"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  w_thr			  "[ 0.01 0.01 ]"
+	  w_thr_unit		  "rad/s"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Input\nSun\nInertia"
+	  SID			  "245:83"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [390, 160, 430, 200]
+	  ZOrder		  -24
+	  BlockRotation		  180
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Inertia"
+	  SourceType		  "Inertia"
+	  SourceFile		  "foundation.mechanical.rotational.inertia"
+	  ComponentPath		  "foundation.mechanical.rotational.inertia"
+	  ComponentVariants	  "foundation.mechanical.rotational.inertia"
+	  ComponentVariantNames	  "inertia"
+	  ClassName		  "inertia"
+	  SchemaVersion		  "1"
+	  inertia		  "1e-4"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "0"
+	  initial_velocity_unit	  "rad/s"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Input Carrier/\nOutput Ring\nInertia"
+	  SID			  "245:84"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [145, 145, 185, 185]
+	  ZOrder		  -25
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Inertia"
+	  SourceType		  "Inertia"
+	  SourceFile		  "foundation.mechanical.rotational.inertia"
+	  ComponentPath		  "foundation.mechanical.rotational.inertia"
+	  ComponentVariants	  "foundation.mechanical.rotational.inertia"
+	  ComponentVariantNames	  "inertia"
+	  ClassName		  "inertia"
+	  SchemaVersion		  "1"
+	  inertia		  "1e-4"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "0"
+	  initial_velocity_unit	  "rad/s"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Output\nPlanetary Gear"
+	  SID			  "245:71"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [705, 162, 760, 218]
+	  ZOrder		  -26
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Gears/Planetary Gear"
+	  SourceType		  "Planetary Gear"
+	  SourceFile		  "sdl.gears.planetary_gear"
+	  ComponentPath		  "sdl.gears.planetary_gear"
+	  ComponentVariants	  "sdl.gears.planetary_gear"
+	  ComponentVariantNames	  "planetary_gear"
+	  ClassName		  "planetary_gear"
+	  SchemaVersion		  "1"
+	  rs_ratio		  "1.84"
+	  rs_ratio_unit		  "1"
+	  friction_model	  "1"
+	  friction_model_unit	  "1"
+	  efficiency		  "[ 0.96 0.98 ]"
+	  efficiency_unit	  "1"
+	  mu_visc		  "[0 0]"
+	  mu_visc_unit		  "N*m/(rad/s)"
+	  w_thr			  "[ 0.01 0.01 ]"
+	  w_thr_unit		  "rad/s"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Output\nSun\nInertia"
+	  SID			  "245:72"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [600, 185, 640, 225]
+	  ZOrder		  -27
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Inertia"
+	  SourceType		  "Inertia"
+	  SourceFile		  "foundation.mechanical.rotational.inertia"
+	  ComponentPath		  "foundation.mechanical.rotational.inertia"
+	  ComponentVariants	  "foundation.mechanical.rotational.inertia"
+	  ComponentVariantNames	  "inertia"
+	  ClassName		  "inertia"
+	  SchemaVersion		  "1"
+	  inertia		  "1e-4"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "0"
+	  initial_velocity_unit	  "rad/s"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Output Carrier/\nInput Ring\nInertia "
+	  SID			  "245:73"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [820, 170, 860, 210]
+	  ZOrder		  -28
+	  BlockRotation		  180
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Inertia"
+	  SourceType		  "Inertia"
+	  SourceFile		  "foundation.mechanical.rotational.inertia"
+	  ComponentPath		  "foundation.mechanical.rotational.inertia"
+	  ComponentVariants	  "foundation.mechanical.rotational.inertia"
+	  ComponentVariantNames	  "inertia"
+	  ClassName		  "inertia"
+	  SchemaVersion		  "1"
+	  inertia		  "1e-4"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "0"
+	  initial_velocity_unit	  "rad/s"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reference"
+	  SID			  "245:75"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [540, 105, 560, 125]
+	  ZOrder		  -29
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	  SourceType		  "Mechanical\nRotational Reference"
+	  SourceFile		  "foundation.mechanical.rotational.reference"
+	  ComponentPath		  "foundation.mechanical.rotational.reference"
+	  ComponentVariants	  "foundation.mechanical.rotational.reference"
+	  ComponentVariantNames	  "reference"
+	  ClassName		  "reference"
+	  SchemaVersion		  "1"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reference1"
+	  SID			  "245:91"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [545, 385, 565, 405]
+	  ZOrder		  -30
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	  SourceType		  "Mechanical\nRotational Reference"
+	  SourceFile		  "foundation.mechanical.rotational.reference"
+	  ComponentPath		  "foundation.mechanical.rotational.reference"
+	  ComponentVariants	  "foundation.mechanical.rotational.reference"
+	  ComponentVariantNames	  "reference"
+	  ClassName		  "reference"
+	  SchemaVersion		  "1"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS\nConverter"
+	  SID			  "245:76"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [570, 65, 600, 85]
+	  ZOrder		  -31
+	  BlockMirror		  on
+	  ForegroundColor	  "cyan"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant ".001"
+	  UdotUserProvided	  "0"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS\nConverter1"
+	  SID			  "245:86"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [85, 25, 115, 45]
+	  ZOrder		  -32
+	  ForegroundColor	  "green"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant ".001"
+	  UdotUserProvided	  "0"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS\nConverter2"
+	  SID			  "245:92"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [565, 345, 595, 365]
+	  ZOrder		  -33
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant ".001"
+	  UdotUserProvided	  "0"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS\nConverter3"
+	  SID			  "245:97"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [85, 305, 115, 325]
+	  ZOrder		  -34
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant ".001"
+	  UdotUserProvided	  "0"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS\nConverter4"
+	  SID			  "245:102"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [85, 425, 115, 445]
+	  ZOrder		  -35
+	  ForegroundColor	  "red"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant ".001"
+	  UdotUserProvided	  "0"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "off"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Out"
+	  SID			  "245:66"
+	  Tag			  "PMCPort"
+	  Position		  [740, 100, 770, 120]
+	  ZOrder		  -36
+	  ForegroundColor	  "magenta"
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "In"
+	  SID			  "245:67"
+	  Tag			  "PMCPort"
+	  Position		  [45, 215, 75, 235]
+	  ZOrder		  -37
+	  BlockMirror		  on
+	  ForegroundColor	  "magenta"
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "Simulink-PS\nConverter4"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS\nConverter4"
+	  SrcPort		  RConn1
+	  Points		  [5, 0; 0, 30]
+	  DstBlock		  "Clutch A"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Simulink-PS\nConverter3"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS\nConverter3"
+	  SrcPort		  RConn1
+	  Points		  [6, 0; 0, 40]
+	  DstBlock		  "Clutch R"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "Simulink-PS\nConverter2"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS\nConverter2"
+	  SrcPort		  RConn1
+	  DstBlock		  "Clutch C"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Reference1"
+	  SrcPort		  LConn1
+	  DstBlock		  "Clutch C"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [20, 370; 125, 0]
+	  DstBlock		  "Clutch R"
+	  DstPort		  LConn2
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    Points		    [0, -145]
+	    Branch {
+	      ConnectType	      "DEST_SRC"
+	      Points		      [0, -135]
+	      DstBlock		      "Clutch B"
+	      DstPort		      LConn2
+	    }
+	    Branch {
+	      ConnectType	      "DEST_SRC"
+	      DstBlock		      "In"
+	      DstPort		      RConn1
+	    }
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    Points		    [0, 110]
+	    DstBlock		    "Clutch A"
+	    DstPort		    LConn2
+	  }
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "Simulink-PS\nConverter1"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS\nConverter1"
+	  SrcPort		  RConn1
+	  Points		  [6, 0; 0, 40]
+	  DstBlock		  "Clutch B"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [230, 165; -30, 0]
+	  DstBlock		  "Input Carrier/\nOutput Ring\nInertia"
+	  DstPort		  LConn1
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Input\nPlanetary Gear "
+	    SrcPort		    LConn1
+	    Points		    [-10, 0]
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    Points		    [0, -80]
+	    Branch {
+	      ConnectType	      "DEST_DEST"
+	      Points		      [450, 85; -220, 0]
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"Clutch D"
+		SrcPort			RConn1
+		Points			[-15, 0]
+	      }
+	      Branch {
+		ConnectType		"SRC_SRC"
+		Points			[0, 90]
+		DstBlock		"Output\nPlanetary Gear"
+		DstPort			RConn1
+	      }
+	    }
+	    Branch {
+	      ConnectType	      "DEST_SRC"
+	      DstBlock		      "Clutch B"
+	      DstPort		      RConn1
+	    }
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [335, 365; 135, 0]
+	  DstBlock		  "Clutch C"
+	  DstPort		  RConn1
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    Points		    [335, 180; 0, 185]
+	    Branch {
+	      ConnectType	      "SRC_SRC"
+	      DstBlock		      "Input\nSun\nInertia"
+	      DstPort		      LConn1
+	    }
+	    Branch {
+	      ConnectType	      "SRC_DEST"
+	      SrcBlock		      "Input\nPlanetary Gear "
+	      SrcPort		      RConn2
+	      Points		      [10, 0]
+	    }
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Clutch R"
+	    DstPort		    RConn1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS\nConverter"
+	  SrcPort		  RConn1
+	  DstBlock		  "Clutch D"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "Simulink-PS\nConverter"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Reference"
+	  SrcPort		  LConn1
+	  DstBlock		  "Clutch D"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [670, 205; -15, 0]
+	  DstBlock		  "Output\nSun\nInertia"
+	  DstPort		  LConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Output\nPlanetary Gear"
+	    DstPort		    RConn2
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Clutch A"
+	    SrcPort		    RConn1
+	    Points		    [445, 0; 0, -270]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [790, 150; 0, -40; -5, 0]
+	  DstBlock		  "Out"
+	  DstPort		  RConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    Points		    [0, 40]
+	    Branch {
+	      ConnectType	      "DEST_SRC"
+	      DstBlock		      "Output Carrier/\nInput Ring\nInertia "
+	      DstPort		      LConn1
+	    }
+	    Branch {
+	      ConnectType	      "DEST_DEST"
+	      SrcBlock		      "Output\nPlanetary Gear"
+	      SrcPort		      LConn1
+	      Points		      [15, 0]
+	    }
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Input\nPlanetary Gear "
+	    SrcPort		    RConn1
+	    Points		    [465, 0]
+	  }
+	}
+	Line {
+	  SrcBlock		  "Clutch\nPressures"
+	  SrcPort		  5
+	  DstBlock		  "Goto4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\nPressures"
+	  SrcPort		  4
+	  DstBlock		  "Goto3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\nPressures"
+	  SrcPort		  3
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\nPressures"
+	  SrcPort		  2
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\nPressures"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "P"
+	  SrcPort		  1
+	  DstBlock		  "Clutch\nPressures"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Calculate\nratio"
+      SID		      "208"
+      Ports		      [2, 1]
+      Position		      [620, 12, 675, 48]
+      ZOrder		      -2
+      BackgroundColor	      "[1.000000, 0.501961, 0.752941]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Calculate\nratio"
+	Location		[537, 45, 782, 429]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "w_in"
+	  SID			  "209"
+	  Position		  [15, 98, 45, 112]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "w_out"
+	  SID			  "210"
+	  Position		  [15, 23, 45, 37]
+	  ZOrder		  -2
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Divide"
+	  SID			  "211"
+	  Ports			  [2, 1]
+	  Position		  [80, 22, 110, 53]
+	  ZOrder		  -3
+	  ShowName		  off
+	  Inputs		  "*/"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "212"
+	  Ports			  [1, 1]
+	  Position		  [50, 60, 70, 80]
+	  ZOrder		  -4
+	  BlockRotation		  270
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0.001"
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "r"
+	  SID			  "297"
+	  Position		  [135, 33, 165, 47]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  "Divide"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "w_in"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "w_out"
+	  SrcPort		  1
+	  DstBlock		  "Divide"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Divide"
+	  SrcPort		  1
+	  DstBlock		  "r"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Display\nFigure"
+      SID		      "316"
+      Description	      "Help callback for CR-CR transmission model: sdl_vehicle.mdl"
+      Ports		      []
+      Position		      [710, 349, 736, 370]
+      ZOrder		      -3
+      ForegroundColor	      "white"
+      ShowName		      off
+      OpenFcn		      "helpview([docroot '/toolbox/physmod/sdl/sdl.map'], 'sdl_vehicle_help');"
+      FontSize		      12
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Help callback"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('info.bmp'))"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      System {
+	Name			"Display\nFigure"
+	Location		[120, 348, 430, 734]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"1"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "EmptySubsystem"
+	  SID			  "316:1"
+	  Ports			  []
+	  Position		  [115, 50, 145, 80]
+	  ZOrder		  -1
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "EmptySubsystem"
+	    Location		    [112, 61, 916, 789]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Engine\nRPM"
+      SID		      "301"
+      Ports		      [1]
+      Position		      [105, 184, 135, 216]
+      ZOrder		      -4
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      Floating		      off
+      Location		      [1412, 607, 1742, 847]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"Engine speed (RPM)"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "150"
+      YMin		      "500"
+      YMax		      "4000"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "500000"
+      SampleTime	      "0.1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Engine\ndynamics"
+      SID		      "196"
+      Ports		      [0, 1, 0, 0, 0, 0, 1]
+      Position		      [20, 185, 80, 245]
+      ZOrder		      -5
+      BackgroundColor	      "[0.250980, 0.501961, 0.501961]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Engine\ndynamics"
+	Location		[1272, 149, 2298, 879]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Scope
+	  Name			  "Engine\npower (W)"
+	  SID			  "302"
+	  Ports			  [1]
+	  Position		  [715, 174, 745, 206]
+	  ZOrder		  -1
+	  ForegroundColor	  "blue"
+	  Floating		  off
+	  Location		  [1280, 209, 1605, 446]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "150"
+	  YMin			  "-50000"
+	  YMax			  "150000"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "500000"
+	  SampleTime		  "0.1"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Engine\nspeed (rpm)1"
+	  SID			  "340"
+	  Ports			  [1]
+	  Position		  [755, 329, 785, 361]
+	  ZOrder		  29
+	  ForegroundColor	  "blue"
+	  Floating		  off
+	  Location		  [1282, 524, 1607, 761]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "150"
+	  YMin			  "0"
+	  YMax			  "4000"
+	  SaveName		  "ScopeData6"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "500000"
+	  SampleTime		  "0.1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Generic Engine"
+	  SID			  "270"
+	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Position		  [445, 174, 535, 236]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Engines/Generic Engine"
+	  SourceType		  "Generic Engine"
+	  SourceFile		  "sdl.engines.generic_engine"
+	  ComponentPath		  "sdl.engines.generic_engine"
+	  ComponentVariants	  "sdl.engines.generic_engine"
+	  ComponentVariantNames	  "generic_engine"
+	  ClassName		  "generic_engine"
+	  SchemaVersion		  "1"
+	  model_parameterization  "1"
+	  model_parameterization_unit "1"
+	  engine_type		  "1"
+	  engine_type_unit	  "1"
+	  P_max			  "1.5e+5"
+	  P_max_unit		  "W"
+	  w_P_max		  "4.5e+3"
+	  w_P_max_unit		  "rpm"
+	  w_max			  "6e+3"
+	  w_max_unit		  "rpm"
+	  w_min			  "500"
+	  w_min_unit		  "rpm"
+	  w_tab			  "[ 500 1000 2e+3 3e+3 4e+3 5e+3 6e+3 7e+3 ]"
+	  w_tab_unit		  "rpm"
+	  trq_tab		  "[ 380 380 380 380 350 280 200 80 ]"
+	  trq_tab_unit		  "N*m"
+	  pwr_tab		  "[ 2e+4 4e+4 7.8e+4 1.2e+5 1.45e+5 1.48e+5 1.25e+5 6e+4 ]"
+	  pwr_tab_unit		  "W"
+	  interp_method		  "1"
+	  interp_method_unit	  "1"
+	  model_inertia		  "1"
+	  model_inertia_unit	  "1"
+	  inertia		  "0.08"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "vi"
+	  initial_velocity_unit	  "rpm"
+	  model_time_constant	  "1"
+	  model_time_constant_unit "1"
+	  time_constant		  "0.4"
+	  time_constant_unit	  "s"
+	  T0			  "0"
+	  T0_unit		  "1"
+	  w_thr			  "100"
+	  w_thr_unit		  "rpm"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Input Signal"
+	  SID			  "324"
+	  Ports			  [1]
+	  Position		  [150, 19, 180, 51]
+	  ZOrder		  13
+	  ForegroundColor	  "blue"
+	  Floating		  off
+	  Location		  [94, 552, 419, 792]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "150"
+	  YMin			  "-0.5"
+	  YMax			  "1.5"
+	  SaveName		  "ScopeData3"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "500000"
+	  SampleTime		  "0.1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PS-Simulink\nConverter3"
+	  SID			  "280"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [565, 182, 595, 198]
+	  ZOrder		  -3
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  Unit			  "W"
+	  AffineConversion	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Engine power (W)"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reference"
+	  SID			  "271"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [400, 255, 420, 275]
+	  ZOrder		  -4
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	  SourceType		  "Mechanical\nRotational Reference"
+	  SourceFile		  "foundation.mechanical.rotational.reference"
+	  ComponentPath		  "foundation.mechanical.rotational.reference"
+	  ComponentVariants	  "foundation.mechanical.rotational.reference"
+	  ComponentVariantNames	  "reference"
+	  ClassName		  "reference"
+	  SchemaVersion		  "1"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reference1"
+	  SID			  "346"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [505, 390, 525, 410]
+	  ZOrder		  36
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	  SourceType		  "Mechanical\nRotational Reference"
+	  SourceFile		  "foundation.mechanical.rotational.reference"
+	  ComponentPath		  "foundation.mechanical.rotational.reference"
+	  ComponentVariants	  "foundation.mechanical.rotational.reference"
+	  ComponentVariantNames	  "reference"
+	  ClassName		  "reference"
+	  SchemaVersion		  "1"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Shaft sensor"
+	  SID			  "274"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [595, 267, 635, 293]
+	  ZOrder		  -5
+	  ForegroundColor	  "blue"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Shaft sensor"
+	    Location		    [276, 204, 506, 634]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PS-Simulink\nConverter3"
+	      SID		      "275"
+	      Ports		      [0, 1, 0, 0, 0, 1]
+	      Position		      [80, 142, 110, 158]
+	      ZOrder		      -1
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
+	      SourceType	      "PS-Simulink\nConverter"
+	      PhysicalDomain	      "network_engine_domain"
+	      LeftPortType	      "input"
+	      RightPortType	      "output"
+	      SubClassName	      "ps_output"
+	      Unit		      "rpm"
+	      AffineConversion	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reference"
+	      SID		      "276"
+	      Ports		      [0, 0, 0, 0, 0, 1]
+	      Position		      [135, 150, 155, 170]
+	      ZOrder		      -2
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      ShowName		      off
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	      SourceType	      "Mechanical\nRotational Reference"
+	      SourceFile	      "foundation.mechanical.rotational.reference"
+	      ComponentPath	      "foundation.mechanical.rotational.reference"
+	      ComponentVariants	      "foundation.mechanical.rotational.reference"
+	      ComponentVariantNames   "reference"
+	      ClassName		      "reference"
+	      SchemaVersion	      "1"
+	      t_Log		      "off"
+	      LocalVarNames	      "|t"
+	      LocalVarDescs	      "|t"
+	      LocalVarLogging	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Rotational\nMotion Sensor"
+	      SID		      "277"
+	      Ports		      [0, 0, 0, 0, 0, 1, 3]
+	      Position		      [110, 65, 150, 105]
+	      ZOrder		      -3
+	      BlockRotation	      90
+	      NamePlacement	      "alternate"
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "fl_lib/Mechanical/Mechanical Sensors/Ideal Rotational\nMotion Sensor"
+	      SourceType	      "Ideal Rotational\nMotion Sensor"
+	      SourceFile	      "foundation.mechanical.sensors.angular_velocity"
+	      ComponentPath	      "foundation.mechanical.sensors.angular_velocity"
+	      ComponentVariants	      "foundation.mechanical.sensors.angular_velocity"
+	      ComponentVariantNames   "angular_velocity"
+	      ClassName		      "angular_velocity"
+	      SchemaVersion	      "1"
+	      offset		      "0"
+	      offset_unit	      "rad"
+	      w_Log		      "off"
+	      t_Log		      "off"
+	      phi_Log		      "off"
+	      LocalVarNames	      "|w|t|phi"
+	      LocalVarDescs	      "|w|t|phi"
+	      LocalVarLogging	      "[0 0 0]"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "R"
+	      SID		      "278"
+	      Position		      [115, 25, 145, 40]
+	      ZOrder		      -4
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      Port		      "1"
+	      Side		      "Left"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "rpm"
+	      SID		      "279"
+	      Position		      [20, 143, 50, 157]
+	      ZOrder		      -5
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Rotational\nMotion Sensor"
+	      SrcPort		      RConn2
+	      Points		      [0, 30]
+	      DstBlock		      "PS-Simulink\nConverter3"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Reference"
+	      SrcPort		      LConn1
+	      DstBlock		      "Rotational\nMotion Sensor"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "R"
+	      SrcPort		      RConn1
+	      DstBlock		      "Rotational\nMotion Sensor"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      SrcBlock		      "PS-Simulink\nConverter3"
+	      SrcPort		      1
+	      DstBlock		      "rpm"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS\nConverter1"
+	  SID			  "347"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [425, 372, 455, 408]
+	  ZOrder		  35
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant "0.001"
+	  UdotUserProvided	  "1"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Simulink-PS Converter"
+	  SID			  "332"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [160, 172, 190, 208]
+	  ZOrder		  21
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
+	  SourceType		  "Simulink-PS\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_input"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  InputFilterTimeConstant ".001"
+	  UdotUserProvided	  "[]"
+	  SimscapeFilterOrder	  "1"
+	  InputFiltering	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Starter motor"
+	  SID			  "345"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [485, 325, 525, 365]
+	  ZOrder		  37
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Mechanical Sources/Ideal Torque Source"
+	  SourceType		  "Ideal Torque Source"
+	  SourceFile		  "foundation.mechanical.sources.torque"
+	  ComponentPath		  "foundation.mechanical.sources.torque"
+	  ComponentVariants	  "foundation.mechanical.sources.torque"
+	  ComponentVariantNames	  "torque"
+	  ClassName		  "torque"
+	  SchemaVersion		  "1"
+	  w_Log			  "off"
+	  t_Log			  "off"
+	  LocalVarNames		  "|w|t"
+	  LocalVarDescs		  "|w|t"
+	  LocalVarLogging	  "[0 0]"
+	}
+	Block {
+	  BlockType		  Step
+	  Name			  "Step"
+	  SID			  "331"
+	  Position		  [25, 175, 50, 205]
+	  ZOrder		  20
+	  Time			  "60"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Torque input"
+	  SID			  "349"
+	  Tag			  "STV Subsys"
+	  Ports			  [0, 1]
+	  Position		  [305, 370, 390, 410]
+	  ZOrder		  38
+	  CopyFcn		  "sigbuilder_block('copy');"
+	  DeleteFcn		  "sigbuilder_block('delete');"
+	  LoadFcn		  "sigbuilder_block('load');"
+	  ModelCloseFcn		  "sigbuilder_block('modelClose');"
+	  PreSaveFcn		  "sigbuilder_block('preSave');"
+	  StartFcn		  "sigbuilder_block('start');"
+	  PauseFcn		  "sigbuilder_block('pause');"
+	  ContinueFcn		  "sigbuilder_block('continue');"
+	  StopFcn		  "sigbuilder_block('stop');"
+	  NameChangeFcn		  "sigbuilder_block('namechange');"
+	  ClipboardFcn		  "sigbuilder_block('clipboard');"
+	  OpenFcn		  "sigbuilder_block('open',[69 114 550.5 399.75 ]);"
+	  CloseFcn		  "sigbuilder_block('close');"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  on
+	  MaskType		  "Sigbuilder block"
+	  MaskDescription	  "Simulink:masks:SigbuilderBlock_MD"
+	  MaskInitialization	  "if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('ma"
+	  "skInit'); end"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "plot(0, 0, 100, 100,[2, 2, 32, 32, 2], [68, 8, 8, 68, 68],[32, 2], [38, 38], [32, 19, 2],[53, 60, 4"
+	  "4], [32, 17, 17, 2],[16, 16, 31, 31]);txt = getActiveGroup(gcbh);text(2, 100, txt,'verticalAlignment', 'top');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "port"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskCapabilities	  "slmaskedcaps(gcbh)"
+	  System {
+	    Name		    "Torque input"
+	    Location		    [480, 85, 980, 386]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "3"
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "349:1"
+	      Tag		      "STV Demux"
+	      Ports		      [1, 1]
+	      Position		      [150, 30, 160, 600]
+	      ZOrder		      -1
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      FromWorkspace
+	      Name		      "FromWs"
+	      SID		      "349:2"
+	      Tag		      "STV FromWs"
+	      Position		      [30, 300, 115, 350]
+	      ZOrder		      -2
+	      VariableName	      "tuvar"
+	      SampleTime	      "0"
+	      ZeroCross		      on
+	      SigBuilderData	      "DataTag1"
+	      VnvData		      "DataTag2"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Signal 1"
+	      SID		      "349:3"
+	      Tag		      "STV Outport"
+	      Position		      [280, 30, 300, 40]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, -280]
+	      DstBlock		      "Signal 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "FromWs"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -10]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Engine"
+	  SID			  "203"
+	  Position		  [600, 213, 630, 227]
+	  ZOrder		  -7
+	  BlockMirror		  on
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "rpm"
+	  SID			  "300"
+	  Position		  [685, 273, 715, 287]
+	  ZOrder		  -8
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Reference"
+	  SrcPort		  LConn1
+	  Points		  [0, -20]
+	  DstBlock		  "Generic Engine"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Generic Engine"
+	  SrcPort		  RConn1
+	  DstBlock		  "PS-Simulink\nConverter3"
+	  DstPort		  LConn1
+	}
+	Line {
+	  Name			  "Engine power (W)"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PS-Simulink\nConverter3"
+	  SrcPort		  1
+	  DstBlock		  "Engine\npower (W)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Step"
+	  SrcPort		  1
+	  Points		  [41, 0]
+	  Branch {
+	    Points		    [0, -155]
+	    DstBlock		    "Input Signal"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Simulink-PS Converter"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Shaft sensor"
+	  SrcPort		  1
+	  Points		  [19, 0]
+	  Branch {
+	    Points		    [0, 65]
+	    DstBlock		    "Engine\nspeed (rpm)1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "rpm"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Generic Engine"
+	  SrcPort		  RConn2
+	  Points		  [0, 5; 1, 0]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [0, -5]
+	    DstBlock		    "Engine"
+	    DstPort		    RConn1
+	  }
+	  Branch {
+	    ConnectType		    "DEST_DEST"
+	    Points		    [551, 280; 0, -55]
+	    Branch {
+	      ConnectType	      "SRC_DEST"
+	      SrcBlock		      "Starter motor"
+	      SrcPort		      LConn1
+	      Points		      [0, -23; 46, 0; 0, -7]
+	    }
+	    Branch {
+	      ConnectType	      "SRC_SRC"
+	      DstBlock		      "Shaft sensor"
+	      DstPort		      LConn1
+	    }
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS\nConverter1"
+	  SrcPort		  RConn1
+	  Points		  [25, 0]
+	  DstBlock		  "Starter motor"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Starter motor"
+	  SrcPort		  RConn2
+	  DstBlock		  "Reference1"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Torque input"
+	  SrcPort		  1
+	  DstBlock		  "Simulink-PS\nConverter1"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Simulink-PS Converter"
+	  SrcPort		  RConn1
+	  DstBlock		  "Generic Engine"
+	  DstPort		  LConn1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Impeller\ninertia"
+      SID		      "268"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [100, 290, 140, 330]
+      ZOrder		      -6
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "lightBlue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "fl_lib/Mechanical/Rotational Elements/Inertia"
+      SourceType	      "Inertia"
+      SourceFile	      "foundation.mechanical.rotational.inertia"
+      ComponentPath	      "foundation.mechanical.rotational.inertia"
+      ComponentVariants	      "foundation.mechanical.rotational.inertia"
+      ComponentVariantNames   "inertia"
+      ClassName		      "inertia"
+      SchemaVersion	      "1"
+      inertia		      "0.02"
+      inertia_unit	      "kg*m^2"
+      initial_velocity	      "vi"
+      initial_velocity_unit   "rpm"
+      t_Log		      "off"
+      LocalVarNames	      "|t"
+      LocalVarDescs	      "|t"
+      LocalVarLogging	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output\nshaft\ninertia"
+      SID		      "261"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [570, 295, 610, 335]
+      ZOrder		      -7
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "lightBlue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "fl_lib/Mechanical/Rotational Elements/Inertia"
+      SourceType	      "Inertia"
+      SourceFile	      "foundation.mechanical.rotational.inertia"
+      ComponentPath	      "foundation.mechanical.rotational.inertia"
+      ComponentVariants	      "foundation.mechanical.rotational.inertia"
+      ComponentVariantNames   "inertia"
+      ClassName		      "inertia"
+      SchemaVersion	      "1"
+      inertia		      "1e-1"
+      inertia_unit	      "kg*m^2"
+      initial_velocity	      "0"
+      initial_velocity_unit   "rad/s"
+      t_Log		      "off"
+      LocalVarNames	      "|t"
+      LocalVarDescs	      "|t"
+      LocalVarLogging	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Shaft\nsensor 1"
+      SID		      "253"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [257, 150, 283, 190]
+      ZOrder		      -8
+      BlockRotation	      270
+      ForegroundColor	      "blue"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Shaft\nsensor 1"
+	Location		[6, 5, 827, 620]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "PS-Simulink\nConverter3"
+	  SID			  "254"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [80, 142, 110, 158]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  Unit			  "rad/s"
+	  AffineConversion	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reference"
+	  SID			  "255"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [135, 150, 155, 170]
+	  ZOrder		  -2
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	  SourceType		  "Mechanical\nRotational Reference"
+	  SourceFile		  "foundation.mechanical.rotational.reference"
+	  ComponentPath		  "foundation.mechanical.rotational.reference"
+	  ComponentVariants	  "foundation.mechanical.rotational.reference"
+	  ComponentVariantNames	  "reference"
+	  ClassName		  "reference"
+	  SchemaVersion		  "1"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rotational\nMotion Sensor"
+	  SID			  "256"
+	  Ports			  [0, 0, 0, 0, 0, 1, 3]
+	  Position		  [110, 65, 150, 105]
+	  ZOrder		  -3
+	  BlockRotation		  90
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Mechanical Sensors/Ideal Rotational\nMotion Sensor"
+	  SourceType		  "Ideal Rotational\nMotion Sensor"
+	  SourceFile		  "foundation.mechanical.sensors.angular_velocity"
+	  ComponentPath		  "foundation.mechanical.sensors.angular_velocity"
+	  ComponentVariants	  "foundation.mechanical.sensors.angular_velocity"
+	  ComponentVariantNames	  "angular_velocity"
+	  ClassName		  "angular_velocity"
+	  SchemaVersion		  "1"
+	  offset		  "0"
+	  offset_unit		  "rad"
+	  w_Log			  "off"
+	  t_Log			  "off"
+	  phi_Log		  "off"
+	  LocalVarNames		  "|w|t|phi"
+	  LocalVarDescs		  "|w|t|phi"
+	  LocalVarLogging	  "[0 0 0]"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "R"
+	  SID			  "257"
+	  Position		  [115, 25, 145, 40]
+	  ZOrder		  -4
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "w"
+	  SID			  "258"
+	  Position		  [20, 143, 50, 157]
+	  ZOrder		  -5
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "PS-Simulink\nConverter3"
+	  SrcPort		  1
+	  DstBlock		  "w"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "R"
+	  SrcPort		  RConn1
+	  DstBlock		  "Rotational\nMotion Sensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Reference"
+	  SrcPort		  LConn1
+	  DstBlock		  "Rotational\nMotion Sensor"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Rotational\nMotion Sensor"
+	  SrcPort		  RConn2
+	  Points		  [0, 30]
+	  DstBlock		  "PS-Simulink\nConverter3"
+	  DstPort		  LConn1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Shaft\nsensor 2"
+      SID		      "247"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [577, 100, 603, 140]
+      ZOrder		      -9
+      BlockRotation	      270
+      ForegroundColor	      "blue"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Shaft\nsensor 2"
+	Location		[412, 600, 642, 1030]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "PS-Simulink\nConverter3"
+	  SID			  "248"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [80, 142, 110, 158]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  Unit			  "1"
+	  AffineConversion	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reference"
+	  SID			  "249"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [135, 150, 155, 170]
+	  ZOrder		  -2
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference"
+	  SourceType		  "Mechanical\nRotational Reference"
+	  SourceFile		  "foundation.mechanical.rotational.reference"
+	  ComponentPath		  "foundation.mechanical.rotational.reference"
+	  ComponentVariants	  "foundation.mechanical.rotational.reference"
+	  ComponentVariantNames	  "reference"
+	  ClassName		  "reference"
+	  SchemaVersion		  "1"
+	  t_Log			  "off"
+	  LocalVarNames		  "|t"
+	  LocalVarDescs		  "|t"
+	  LocalVarLogging	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rotational\nMotion Sensor"
+	  SID			  "250"
+	  Ports			  [0, 0, 0, 0, 0, 1, 3]
+	  Position		  [110, 65, 150, 105]
+	  ZOrder		  -3
+	  BlockRotation		  90
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Mechanical Sensors/Ideal Rotational\nMotion Sensor"
+	  SourceType		  "Ideal Rotational\nMotion Sensor"
+	  SourceFile		  "foundation.mechanical.sensors.angular_velocity"
+	  ComponentPath		  "foundation.mechanical.sensors.angular_velocity"
+	  ComponentVariants	  "foundation.mechanical.sensors.angular_velocity"
+	  ComponentVariantNames	  "angular_velocity"
+	  ClassName		  "angular_velocity"
+	  SchemaVersion		  "1"
+	  offset		  "0"
+	  offset_unit		  "rad"
+	  w_Log			  "off"
+	  t_Log			  "off"
+	  phi_Log		  "off"
+	  LocalVarNames		  "|w|t|phi"
+	  LocalVarDescs		  "|w|t|phi"
+	  LocalVarLogging	  "[0 0 0]"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "R"
+	  SID			  "251"
+	  Position		  [115, 25, 145, 40]
+	  ZOrder		  -4
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "w"
+	  SID			  "252"
+	  Position		  [20, 143, 50, 157]
+	  ZOrder		  -5
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Rotational\nMotion Sensor"
+	  SrcPort		  RConn2
+	  Points		  [0, 30]
+	  DstBlock		  "PS-Simulink\nConverter3"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Reference"
+	  SrcPort		  LConn1
+	  DstBlock		  "Rotational\nMotion Sensor"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "R"
+	  SrcPort		  RConn1
+	  DstBlock		  "Rotational\nMotion Sensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "PS-Simulink\nConverter3"
+	  SrcPort		  1
+	  DstBlock		  "w"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Solver\nConfiguration"
+      SID		      "260"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [425, 314, 465, 336]
+      ZOrder		      -10
+      BlockMirror	      on
+      ForegroundColor	      "orange"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "nesl_utility/Solver\nConfiguration"
+      SourceType	      "Solver\nConfiguration"
+      PhysicalDomain	      "network_engine_domain"
+      LeftPortType	      "input"
+      RightPortType	      "generic"
+      SubClassName	      "solver"
+      UseCustomDae	      off
+      DoDC		      off
+      ResidualTolerance	      "1e-9"
+      UseLocalSolver	      off
+      LocalSolverChoice	      "NE_BACKWARD_EULER_ADVANCER"
+      LocalSolverSampleTime   "0.001"
+      DoFixedCost	      off
+      MaxNonlinIter	      "3"
+      MaxModeIter	      "2"
+      LinearAlgebra	      "Sparse"
+      Accelerate	      off
+      Profile		      off
+      UseLocalSampling	      off
+      DelaysMemoryBudget      "1024"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Speed\nratio"
+      SID		      "295"
+      Ports		      [1]
+      Position		      [705, 14, 735, 46]
+      ZOrder		      -11
+      ForegroundColor	      "blue"
+      Floating		      off
+      Location		      [801, 78, 1122, 315]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"Speed ratio"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "150"
+      YMin		      "0"
+      YMax		      "1.5"
+      SaveName		      "ScopeData5"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "500000"
+      SampleTime	      "0.1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Torque Converter"
+      SID		      "269"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [165, 202, 220, 258]
+      ZOrder		      -12
+      BackgroundColor	      "lightBlue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "sdl_lib/Couplings & Drives/Torque Converter"
+      SourceType	      "Torque Converter"
+      SourceFile	      "sdl.couplings.torque_converter"
+      ComponentPath	      "sdl.couplings.torque_converter"
+      ComponentVariants	      "sdl.couplings.torque_converter"
+      ComponentVariantNames   "torque_converter"
+      ClassName		      "torque_converter"
+      SchemaVersion	      "1"
+      n_vector		      "[0 0.50 0.60 0.70 0.80 0.87 0.92 0.94 0.96 0.97]"
+      n_vector_unit	      "1"
+      trq_vector	      "[2.2320 1.5462 1.4058 1.2746 1.1528 1.0732 1.0192 0.9983 0.9983 0.9983]"
+      trq_vector_unit	      "1"
+      cf_vector_parameterization "1"
+      cf_vector_parameterization_unit "1"
+      cf_vector_reference_speed	"1"
+      cf_vector_reference_speed_unit "1"
+      cf_vector		      "[12.2938 12.8588 13.1452 13.6285 14.6163 16.2675 19.3503 22.1046 29.9986 50.00]"
+      cf_vector_unit	      "(rad/s)/(N*m)^0.5"
+      cf_vector_sq	      "1e-3*[ 6.616 6.048 5.787 5.384 4.681 3.779 2.671 2.047 1.111 0.400]"
+      cf_vector_sq_unit	      "N*m/(rad/s)^2"
+      interp_method	      "1"
+      interp_method_unit      "1"
+      extrap_method	      "1"
+      extrap_method_unit      "1"
+      model_lag		      "0"
+      model_lag_unit	      "1"
+      tau		      "0.02"
+      tau_unit		      "s"
+      initial_trq_ratio	      "0"
+      initial_trq_ratio_unit  "1"
+      trq_imp_s_Log	      "off"
+      trq_imp_Log	      "off"
+      torque_ratio_Log	      "off"
+      trq_ratio_inst_Log      "off"
+      trq_trb_Log	      "off"
+      w_imp_Log		      "off"
+      w_trb_Log		      "off"
+      power_imp_Log	      "off"
+      power_trb_Log	      "off"
+      power_loss_Log	      "off"
+      efficiency_Log	      "off"
+      LocalVarNames	      "|trq_imp_s|trq_imp|N_t|trq_ratio_inst|trq_trb|w_imp|w_trb|power_imp|power_trb|power_loss|ef"
+      "ficiency"
+      LocalVarDescs	      "|Static torque on impeller shaft (N*m)|Transient torque on impeller shaft (N*m)|Static torq"
+      "ue ratio|Instant torque ratio|Torque on turbine shaft (N*m)|Angular velocity of impeller shaft (rad/s)|Angular v"
+      "elocity of turbine shaft (rad/s)|Power on impeller shaft (W)|Power on turbine shaft (W)|Power loss (W)|Efficienc"
+      "y)"
+      LocalVarLogging	      "[0 0 0 0 0 0 0 0 0 0 0]"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Transmission\ncontroller"
+      SID		      "215"
+      Ports		      [1, 1]
+      Position		      [295, 58, 345, 102]
+      ZOrder		      -13
+      BackgroundColor	      "yellow"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Transmission\ncontroller"
+	Location		[6, 5, 827, 620]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "w"
+	  SID			  "216"
+	  Position		  [20, 93, 50, 107]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Actuator A\nDynamics"
+	  SID			  "217"
+	  Position		  [215, 62, 255, 78]
+	  ZOrder		  -2
+	  ForegroundColor	  "lightBlue"
+	  BackgroundColor	  "lightBlue"
+	  NamePlacement		  "alternate"
+	  Numerator		  "[1/clutchRise]"
+	  Denominator		  "[1 1/clutchRise]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Actuator B\nDynamics"
+	  SID			  "218"
+	  Position		  [215, 87, 255, 103]
+	  ZOrder		  -3
+	  ForegroundColor	  "lightBlue"
+	  BackgroundColor	  "lightBlue"
+	  ShowName		  off
+	  Numerator		  "[1/clutchRise]"
+	  Denominator		  "[1 1/clutchRise]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Actuator C\nDynamics"
+	  SID			  "219"
+	  Position		  [215, 112, 255, 128]
+	  ZOrder		  -4
+	  ForegroundColor	  "lightBlue"
+	  BackgroundColor	  "lightBlue"
+	  ShowName		  off
+	  Numerator		  "[1/clutchRise]"
+	  Denominator		  "[1 1/clutchRise]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Actuator D\nDynamics"
+	  SID			  "220"
+	  Position		  [215, 137, 255, 153]
+	  ZOrder		  -5
+	  ForegroundColor	  "lightBlue"
+	  BackgroundColor	  "lightBlue"
+	  ShowName		  off
+	  Numerator		  "[1/clutchRise]"
+	  Denominator		  "[1 1/clutchRise]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Actuator R\nDynamics"
+	  SID			  "221"
+	  Position		  [215, 162, 255, 178]
+	  ZOrder		  -6
+	  ForegroundColor	  "lightBlue"
+	  BackgroundColor	  "lightBlue"
+	  Numerator		  "[1/clutchRise]"
+	  Denominator		  "[1 1/clutchRise]"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Clutch\npressure\nsignals"
+	  SID			  "222"
+	  Tag			  "STV Subsys"
+	  Ports			  [0, 5]
+	  Position		  [105, 60, 195, 180]
+	  ZOrder		  -7
+	  CopyFcn		  "sigbuilder_block('copy');"
+	  DeleteFcn		  "sigbuilder_block('delete');"
+	  LoadFcn		  "sigbuilder_block('load');"
+	  ModelCloseFcn		  "sigbuilder_block('modelClose');"
+	  PreSaveFcn		  "sigbuilder_block('preSave');"
+	  StartFcn		  "sigbuilder_block('start');"
+	  PauseFcn		  "sigbuilder_block('pause')"
+	  ContinueFcn		  "sigbuilder_block('continue')"
+	  StopFcn		  "sigbuilder_block('stop');"
+	  NameChangeFcn		  "sigbuilder_block('namechange');"
+	  ClipboardFcn		  "sigbuilder_block('clipboard');"
+	  OpenFcn		  "sigbuilder_block('open',[35.25 309 504 456.75 ]);"
+	  CloseFcn		  "sigbuilder_block('close');"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  on
+	  MaskType		  "Sigbuilder block"
+	  MaskDescription	  "Sigbuilder GUI"
+	  MaskInitialization	  "if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('ma"
+	  "skInit'); end"
+	  MaskDisplay		  "plot(0, 0, 100, 100,[2, 2, 32, 32, 2], [68, 8, 8, 68, 68],[32, 2], [38, 38], [32, 19, 2],[53, 60, 4"
+	  "4], [32, 17, 17, 2],[16, 16, 31, 31]);txt = getActiveGroup(gcbh);,text(2, 88, txt);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "port"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Clutch\npressure\nsignals"
+	    Location		    [446, 45, 994, 581]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "223"
+	      Tag		      "STV Demux"
+	      Ports		      [1, 5]
+	      Position		      [150, 46, 160, 624]
+	      ZOrder		      -1
+	      Outputs		      "5"
+	    }
+	    Block {
+	      BlockType		      FromWorkspace
+	      Name		      "FromWs"
+	      SID		      "224"
+	      Tag		      "STV FromWs"
+	      Position		      [30, 300, 115, 350]
+	      ZOrder		      -2
+	      VariableName	      "tuvar"
+	      SampleTime	      "0"
+	      SigBuilderData	      "DataTag3"
+	      VnvData		      "DataTag4"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "A"
+	      SID		      "225"
+	      Tag		      "STV Outport"
+	      Position		      [280, 30, 300, 40]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "B"
+	      SID		      "226"
+	      Tag		      "STV Outport"
+	      Position		      [280, 60, 300, 70]
+	      ZOrder		      -4
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "C"
+	      SID		      "227"
+	      Tag		      "STV Outport"
+	      Position		      [280, 90, 300, 100]
+	      ZOrder		      -5
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "D"
+	      SID		      "228"
+	      Tag		      "STV Outport"
+	      Position		      [280, 120, 300, 130]
+	      ZOrder		      -6
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "R"
+	      SID		      "229"
+	      Tag		      "STV Outport"
+	      Position		      [280, 150, 300, 160]
+	      ZOrder		      -7
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      5
+	      DstBlock		      "R"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, -70]
+	      DstBlock		      "A"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "FromWs"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "B"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "C"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "D"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "230"
+	  Ports			  [5, 1]
+	  Position		  [280, 52, 285, 188]
+	  ZOrder		  -8
+	  ShowName		  off
+	  Inputs		  "5"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Po"
+	  SID			  "246"
+	  Position		  [310, 105, 340, 135]
+	  ZOrder		  -9
+	  Gain			  "p0"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  "231"
+	  Position		  [70, 90, 90, 110]
+	  ZOrder		  -10
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "P"
+	  SID			  "232"
+	  Position		  [360, 113, 390, 127]
+	  ZOrder		  -11
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Clutch\npressure\nsignals"
+	  SrcPort		  5
+	  DstBlock		  "Actuator R\nDynamics"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Actuator R\nDynamics"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Actuator C\nDynamics"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Actuator B\nDynamics"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Clutch\npressure\nsignals"
+	  SrcPort		  4
+	  DstBlock		  "Actuator D\nDynamics"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\npressure\nsignals"
+	  SrcPort		  3
+	  DstBlock		  "Actuator C\nDynamics"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\npressure\nsignals"
+	  SrcPort		  2
+	  DstBlock		  "Actuator B\nDynamics"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clutch\npressure\nsignals"
+	  SrcPort		  1
+	  DstBlock		  "Actuator A\nDynamics"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Po"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "w"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Po"
+	  SrcPort		  1
+	  DstBlock		  "P"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Actuator A\nDynamics"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Actuator D\nDynamics"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Turbine &\ninput shaft\ninertia"
+      SID		      "259"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [250, 290, 290, 330]
+      ZOrder		      -14
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "lightBlue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "fl_lib/Mechanical/Rotational Elements/Inertia"
+      SourceType	      "Inertia"
+      SourceFile	      "foundation.mechanical.rotational.inertia"
+      ComponentPath	      "foundation.mechanical.rotational.inertia"
+      ComponentVariants	      "foundation.mechanical.rotational.inertia"
+      ComponentVariantNames   "inertia"
+      ClassName		      "inertia"
+      SchemaVersion	      "1"
+      inertia		      "1e-2"
+      inertia_unit	      "kg*m^2"
+      initial_velocity	      "0"
+      initial_velocity_unit   "rad/s"
+      t_Log		      "off"
+      LocalVarNames	      "|t"
+      LocalVarDescs	      "|t"
+      LocalVarLogging	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Vehicle\nvelocity"
+      SID		      "299"
+      Ports		      [1]
+      Position		      [705, 174, 735, 206]
+      ZOrder		      -15
+      ForegroundColor	      "blue"
+      Floating		      off
+      Location		      [802, 371, 1127, 608]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0"
+      YMax		      "120"
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "500000"
+      SampleTime	      "0.1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Vehicle and\ntire dynamics"
+      SID		      "234"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [615, 171, 670, 209]
+      ZOrder		      -16
+      BackgroundColor	      "[1.000000, 0.501961, 0.752941]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Port {
+	PortNumber		1
+	Name			"mph"
+	PropagatedSignals	"Velocity(mph)"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Vehicle and\ntire dynamics"
+	Location		[231, 164, 875, 724]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Left tire"
+	  SID			  "283"
+	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Position		  [130, 75, 190, 135]
+	  ZOrder		  -1
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Tires & Vehicles/Tire (Magic Formula)"
+	  SourceType		  "Tire (Magic Formula)"
+	  SourceFile		  "sdl.tires.tire_magic"
+	  ComponentPath		  "sdl.tires.tire_magic"
+	  ComponentVariants	  "sdl.tires.tire_magic"
+	  ComponentVariantNames	  "tire_magic"
+	  ClassName		  "tire_magic"
+	  SchemaVersion		  "1"
+	  parameterization	  "1"
+	  parameterization_unit	  "1"
+	  F_z1			  "3000"
+	  F_z1_unit		  "N"
+	  F_x1			  "3500"
+	  F_x1_unit		  "N"
+	  kappa1		  "10"
+	  kappa1_unit		  "1"
+	  B_m			  "10"
+	  B_m_unit		  "1"
+	  C_m			  "1.9"
+	  C_m_unit		  "1"
+	  D_m			  "1"
+	  D_m_unit		  "1"
+	  E_m			  "0.97"
+	  E_m_unit		  "1"
+	  fz0			  "4e+3"
+	  fz0_unit		  "N"
+	  p_Cx			  "1.685"
+	  p_Cx_unit		  "1"
+	  p_Dx			  "[ 1.21 -0.037 ]"
+	  p_Dx_unit		  "1"
+	  p_Ex			  "[ 0.344 0.095 -0.02 0 ]"
+	  p_Ex_unit		  "1"
+	  p_Kx			  "[ 21.51 -0.163 0.245 ]"
+	  p_Kx_unit		  "1"
+	  p_Hx			  "[ -0.002 0.002 ]"
+	  p_Hx_unit		  "1"
+	  p_Vx			  "[ 0 0 ]"
+	  p_Vx_unit		  "1"
+	  v_tr_thr		  "0.1"
+	  v_tr_thr_unit		  "m/s"
+	  r_e			  "0.3"
+	  r_e_unit		  "m"
+	  model_compliance	  "0"
+	  model_compliance_unit	  "1"
+	  stiffness		  "1e+6"
+	  stiffness_unit	  "N/m"
+	  damping		  "1000"
+	  damping_unit		  "N/(m/s)"
+	  model_inertia		  "1"
+	  model_inertia_unit	  "1"
+	  inertia		  "1e-2"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "0"
+	  initial_velocity_unit	  "rpm"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PS-Simulink\nConverter1"
+	  SID			  "290"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [230, 82, 260, 98]
+	  ZOrder		  -2
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  Unit			  "1"
+	  AffineConversion	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Slip"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PS-Simulink\nConverter3"
+	  SID			  "286"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [345, 52, 375, 68]
+	  ZOrder		  -3
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  Unit			  "m/s"
+	  AffineConversion	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Right tire"
+	  SID			  "294"
+	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Position		  [130, 165, 190, 225]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Tires & Vehicles/Tire (Magic Formula)"
+	  SourceType		  "Tire (Magic Formula)"
+	  SourceFile		  "sdl.tires.tire_magic"
+	  ComponentPath		  "sdl.tires.tire_magic"
+	  ComponentVariants	  "sdl.tires.tire_magic"
+	  ComponentVariantNames	  "tire_magic"
+	  ClassName		  "tire_magic"
+	  SchemaVersion		  "1"
+	  parameterization	  "1"
+	  parameterization_unit	  "1"
+	  F_z1			  "3000"
+	  F_z1_unit		  "N"
+	  F_x1			  "3500"
+	  F_x1_unit		  "N"
+	  kappa1		  "10"
+	  kappa1_unit		  "1"
+	  B_m			  "10"
+	  B_m_unit		  "1"
+	  C_m			  "1.9"
+	  C_m_unit		  "1"
+	  D_m			  "1"
+	  D_m_unit		  "1"
+	  E_m			  "0.97"
+	  E_m_unit		  "1"
+	  fz0			  "4e+3"
+	  fz0_unit		  "N"
+	  p_Cx			  "1.685"
+	  p_Cx_unit		  "1"
+	  p_Dx			  "[ 1.21 -0.037 ]"
+	  p_Dx_unit		  "1"
+	  p_Ex			  "[ 0.344 0.095 -0.02 0 ]"
+	  p_Ex_unit		  "1"
+	  p_Kx			  "[ 21.51 -0.163 0.245 ]"
+	  p_Kx_unit		  "1"
+	  p_Hx			  "[ -0.002 0.002 ]"
+	  p_Hx_unit		  "1"
+	  p_Vx			  "[ 0 0 ]"
+	  p_Vx_unit		  "1"
+	  v_tr_thr		  "0.1"
+	  v_tr_thr_unit		  "m/s"
+	  r_e			  "0.3"
+	  r_e_unit		  "m"
+	  model_compliance	  "0"
+	  model_compliance_unit	  "1"
+	  stiffness		  "1e+6"
+	  stiffness_unit	  "N/m"
+	  damping		  "1000"
+	  damping_unit		  "N/(m/s)"
+	  model_inertia		  "1"
+	  model_inertia_unit	  "1"
+	  inertia		  "1e-2"
+	  inertia_unit		  "kg*m^2"
+	  initial_velocity	  "0"
+	  initial_velocity_unit	  "rpm"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Road\nincline"
+	  SID			  "284"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [395, 252, 420, 278]
+	  ZOrder		  -5
+	  BlockRotation		  180
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Physical Signals/Sources/PS Constant"
+	  SourceType		  "PS Constant"
+	  SourceFile		  "foundation.physical_signal.sources.constant"
+	  ComponentPath		  "foundation.physical_signal.sources.constant"
+	  ComponentVariants	  "foundation.physical_signal.sources.constant"
+	  ComponentVariantNames	  "constant"
+	  ClassName		  "constant"
+	  SchemaVersion		  "1"
+	  constant		  "0"
+	  constant_unit		  "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Tire slip"
+	  SID			  "293"
+	  Ports			  [1]
+	  Position		  [160, 14, 190, 46]
+	  ZOrder		  -6
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  Floating		  off
+	  Location		  [675, 186, 999, 423]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  ShowLegends		  off
+	  YMin			  "0"
+	  YMax			  "0.1"
+	  SaveName		  "ScopeData4"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "500000"
+	  SampleTime		  "0.1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Vehicle Body"
+	  SID			  "282"
+	  Ports			  [0, 0, 0, 0, 0, 3, 3]
+	  Position		  [230, 155, 390, 235]
+	  ZOrder		  -7
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sdl_lib/Tires & Vehicles/Vehicle Body"
+	  SourceType		  "Vehicle Body"
+	  SourceFile		  "sdl.tires.vehicle_body"
+	  ComponentPath		  "sdl.tires.vehicle_body"
+	  ComponentVariants	  "sdl.tires.vehicle_body"
+	  ComponentVariantNames	  "vehicle_body"
+	  ClassName		  "vehicle_body"
+	  SchemaVersion		  "1"
+	  mass			  "1200"
+	  mass_unit		  "kg"
+	  n_w			  "2"
+	  n_w_unit		  "1"
+	  x_f			  "1.4"
+	  x_f_unit		  "m"
+	  x_r			  "1.6"
+	  x_r_unit		  "m"
+	  y_c			  "0.5"
+	  y_c_unit		  "m"
+	  area			  "3"
+	  area_unit		  "m^2"
+	  Cd			  "0.4"
+	  Cd_unit		  "1"
+	  v0			  "0"
+	  v0_unit		  "m/s"
+	  g			  "9.81"
+	  g_unit		  "m/s^2"
+	  rho			  "1.18"
+	  rho_unit		  "kg/m^3"
+	  v_Log			  "off"
+	  f_Log			  "off"
+	  LocalVarNames		  "|v|f"
+	  LocalVarDescs		  "|v|f"
+	  LocalVarLogging	  "[0 0]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Wind\nvelocity"
+	  SID			  "285"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [395, 92, 420, 118]
+	  ZOrder		  -8
+	  BlockRotation		  180
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Physical Signals/Sources/PS Constant"
+	  SourceType		  "PS Constant"
+	  SourceFile		  "foundation.physical_signal.sources.constant"
+	  ComponentPath		  "foundation.physical_signal.sources.constant"
+	  ComponentVariants	  "foundation.physical_signal.sources.constant"
+	  ComponentVariantNames	  "constant"
+	  ClassName		  "constant"
+	  SchemaVersion		  "1"
+	  constant		  "5"
+	  constant_unit		  "1"
+	  LocalVarLogging	  "[]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "m/s2mph"
+	  SID			  "287"
+	  Position		  [410, 45, 440, 75]
+	  ZOrder		  -9
+	  ForegroundColor	  "blue"
+	  Gain			  "2.2369363 "
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Velocity(mph)"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "A"
+	  SID			  "244"
+	  Position		  [45, 113, 75, 127]
+	  ZOrder		  -10
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "mph"
+	  SID			  "298"
+	  Position		  [545, 53, 575, 67]
+	  ZOrder		  -11
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Road\nincline"
+	  SrcPort		  RConn1
+	  Points		  [-15, 0]
+	  DstBlock		  "Vehicle Body"
+	  DstPort		  RConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Wind\nvelocity"
+	  SrcPort		  RConn1
+	  Points		  [-15, 0]
+	  DstBlock		  "Vehicle Body"
+	  DstPort		  LConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "PS-Simulink\nConverter3"
+	  SrcPort		  LConn1
+	  Points		  [-20, 0]
+	  DstBlock		  "Vehicle Body"
+	  DstPort		  LConn2
+	}
+	Line {
+	  SrcBlock		  "PS-Simulink\nConverter3"
+	  SrcPort		  1
+	  DstBlock		  "m/s2mph"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Velocity(mph)"
+	  Labels		  [0, 0]
+	  SrcBlock		  "m/s2mph"
+	  SrcPort		  1
+	  DstBlock		  "mph"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Vehicle Body"
+	  SrcPort		  LConn1
+	  Points		  [0, -20; -35, 0]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Left tire"
+	    DstPort		    RConn2
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [0, 90]
+	    DstBlock		    "Right tire"
+	    DstPort		    RConn2
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Vehicle Body"
+	  SrcPort		  RConn1
+	  Points		  [0, 15; -230, 0; 0, -85]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [0, -90]
+	    DstBlock		    "Left tire"
+	    DstPort		    LConn1
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Right tire"
+	    DstPort		    LConn1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "A"
+	  SrcPort		  RConn1
+	  Points		  [10, 0]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Left tire"
+	    DstPort		    LConn2
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [0, 90]
+	    DstBlock		    "Right tire"
+	    DstPort		    LConn2
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Left tire"
+	  SrcPort		  RConn1
+	  DstBlock		  "PS-Simulink\nConverter1"
+	  DstPort		  LConn1
+	}
+	Line {
+	  Name			  "Slip"
+	  Labels		  [3, 0]
+	  SrcBlock		  "PS-Simulink\nConverter1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -60]
+	  DstBlock		  "Tire slip"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [270, 230; -35, 0]
+      DstBlock		      "Torque Converter"
+      DstPort		      RConn1
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Shaft\nsensor 1"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"Turbine &\ninput shaft\ninertia"
+	SrcPort			LConn1
+	Points			[0, -45]
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	Points			[380, 230; -110, 0]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "CR-CR\n4-speed"
+	  SrcPort		  LConn1
+	  Points		  [-10, 0]
+	}
+	Branch {
+	  ConnectType		  "SRC_SRC"
+	  Points		  [0, 95]
+	  DstBlock		  "Solver\nConfiguration"
+	  DstPort		  RConn1
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [590, 190; 10, 0]
+      DstBlock		      "Vehicle and\ntire dynamics"
+      DstPort		      LConn1
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Shaft\nsensor 2"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"Output\nshaft\ninertia"
+	SrcPort			LConn1
+	Points			[0, -90]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"CR-CR\n4-speed"
+	DstPort			RConn1
+      }
+    }
+    Line {
+      SrcBlock		      "Shaft\nsensor 1"
+      SrcPort		      1
+      Points		      [0, -65]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"Calculate\nratio"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Transmission\ncontroller"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Transmission\ncontroller"
+      SrcPort		      1
+      Points		      [20, 0; 0, 65]
+      DstBlock		      "CR-CR\n4-speed"
+      DstPort		      1
+    }
+    Line {
+      Labels		      [1, 0]
+      SrcBlock		      "Shaft\nsensor 2"
+      SrcPort		      1
+      Points		      [0, -55]
+      DstBlock		      "Calculate\nratio"
+      DstPort		      2
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [120, 230; -25, 0]
+      DstBlock		      "Engine\ndynamics"
+      DstPort		      RConn1
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Impeller\ninertia"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"Torque Converter"
+	SrcPort			LConn1
+	Points			[-30, 0]
+      }
+    }
+    Line {
+      SrcBlock		      "Calculate\nratio"
+      SrcPort		      1
+      DstBlock		      "Speed\nratio"
+      DstPort		      1
+    }
+    Line {
+      Name		      "mph"
+      Labels		      [0, 0]
+      SrcBlock		      "Vehicle and\ntire dynamics"
+      SrcPort		      1
+      DstBlock		      "Vehicle\nvelocity"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Engine\ndynamics"
+      SrcPort		      1
+      DstBlock		      "Engine\nRPM"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "317"
+      Name		      "Vehicle With Automatic Transmission "
+      Position		      [132, 30]
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "318"
+      Name		      "This example shows a complete vehicle\nwith SimDriveline(TM) blocks, from\nengine, drivetrain, and "
+      "transmission, to\ntire and vehicle dynamics. The\ntransmission controller is\npreprogrammed, but can be changed "
+      "to\nrespond to engine and vehicle behavior."
+      Position		      [39, 91]
+      HorizontalAlignment     "left"
+    }
+  }
+}
+MatData {
+  NumRecords		  5
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    R ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    .     8    (    !@         %    \"     $    !"
+    "     0         )    \"         !  @A #@   #@    &    \"     8         !0    @    !     0    $         \"0    @    "
+    "     \".!G0 X    P    !@    @    &          4    (               !          D         "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    N!\\   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I"
+    "9%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &"
+    "1A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                    "
+    "   .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   !0%@  !@    @    \"          4"
+    "    (     0    4    !          4 !  *     0   ((   !X1&%T80      >41A=&$      '-T97!8      !S=&5P60      >4UI;@   "
+    "    'E-87@       !C;VQO<@      ;&EN95-T>6QE &QI;F57:61T: !L86)E;       ;W5T26YD97@  &%L;%A$871A  !A;&Q91&%T80     "
+    "     #@   &     &    \"     8         !0    @    !    !@    $         \"0   #                          FIF9F9F9N3\\"
+    "      ,!20       P%)         64 .    8     8    (    !@         %    \"     $    &     0         )    ,           "
+    " / _        \\#\\       #P/P       / _                      X    X    !@    @    &          4    (     0    $    !"
+    "          D    (               .    .     8    (    !@         %    \"     $    !     0         )    \"           "
+    "    #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         %"
+    "    \"                0         )          X   !(    !@    @    &          4    (     0    ,    !          D    8 "
+    "   0C[HV:SZZC\\                     #@   #     &    \"     0         !0    @    !     0    $         $  ! \"T    ."
+    "    .     8    (    !@         %    \"     $    !     0         )    \"            /@_#@   #     &    \"     0    "
+    "     !0    @    !     0    $         $  ! $$    .    .     8    (    !@         %    \"     $    !     0         )"
+    "    \"            / _#@   )     &    \"     $         !0    @    !     0    $         #@   &     &    \"     8    "
+    "     !0    @    !    !@    $         \"0   #                          FIF9F9F9N3\\      ,!20       P%)         64 "
+    ".    D     8    (     0         %    \"     $    !     0         .    8     8    (    !@         %    \"     $    "
+    "&     0         )    ,            / _        \\#\\       #P/P       / _                      X   !@    !@    @    "
+    "&          4    (     0    8    !          D    P                       40        !1       \" 04       (!!0       "
+    " %E #@   &     &    \"     8         !0    @    !    !@    $         \"0   #                                      "
+    "                 / _        \\#\\.    .     8    (    !@         %    \"     $    !     0         )    \"         "
+    "      #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    P    !@    @   "
+    " &          4    (               !          D         #@   #     &    \"     8         !0    @               $    "
+    "     \"0         .    2     8    (    !@         %    \"     $    #     0         )    &    -B!<T:4]N8_          #"
+    "8@7-&E/;F/PX    P    !@    @    $          4    (     0    $    !         !   0 M    #@   #@    &    \"     8     "
+    "    !0    @    !     0    $         \"0    @           #X/PX    P    !@    @    $          4    (     0    $    ! "
+    "        !   0!\"    #@   #@    &    \"     8         !0    @    !     0    $         \"0    @             0 X   \""
+    "0    !@    @    !          4    (     0    $    !          X   !@    !@    @    &          4    (     0    8    ! "
+    "         D    P                       40        !1       \" 04       (!!0        %E #@   )     &    \"     $      "
+    "   !0    @    !     0    $         #@   &     &    \"     8         !0    @    !    !@    $         \"0   #       "
+    "                                                / _        \\#\\.    F     8    (    !@         %    \"     $    -"
+    "     0         )    :                       )$         D0        \"1         )D         N0        #E       \" 04  "
+    "     (!!0,W,S,S,C$5       # 4D       ,!20        %E #@   )@    &    \"     8         !0    @    !    #0    $      "
+    "   \"0   &@                       \"          (        #P/P       / _        \\#\\       #P/P       / _           "
+    "                             \\#\\       #P/PX    X    !@    @    &          4    (     0    $    !          D    "
+    "(               .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #     "
+    "&    \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"         "
+    "       0         )          X   !(    !@    @    &          4    (     0    ,    !          D    8                "
+    "                 / _#@   #     &    \"     0         !0    @    !     0    $         $  ! \"T    .    .     8    ("
+    "    !@         %    \"     $    !     0         )    \"            /@_#@   #     &    \"     0         !0    @    "
+    "!     0    $         $  ! $,    .    .     8    (    !@         %    \"     $    !     0         )    \"          "
+    "   A #@   ,@    &    \"     $         !0    @    !     0    $         #@   )@    &    \"     8         !0    @    "
+    "!    #0    $         \"0   &@                      \"1         )$         D0        \"9         +D         Y0     "
+    "  @$%       \" 04#-S,S,S(Q%0       P%)       # 4D        !90 X   #(    !@    @    !          4    (     0    $    "
+    "!          X   \"8    !@    @    &          4    (     0    T    !          D   !H                        @       "
+    "  \"         \\#\\       #P/P       / _        \\#\\       #P/P                                       / _        \\"
+    "#\\.    <     8    (    !@         %    \"     $    (     0         )    0               FIF9F9F9N3^:F9F9F9FY/P   "
+    "    \"1         )$         D0        \"Y         64 .    <     8    (    !@         %    \"     $    (     0      "
+    "   )    0                                 #P/P       / _        \\#\\                                .    .     8 "
+    "   (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @"
+    "    !     0    $         \"0    @               X    P    !@    @    &          4    (               !          D "
+    "        #@   #     &    \"     8         !0    @               $         \"0         .    2     8    (    !@      "
+    "   %    \"     $    #     0         )    &    *KQTDUB$- _          \"J\\=)-8A#0/PX    P    !@    @    $          4"
+    "    (     0    $    !         !   0 M    #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
+    "           #X/PX    P    !@    @    $          4    (     0    $    !         !   0!$    #@   #@    &    \"     8 "
+    "        !0    @    !     0    $         \"0    @            00 X   \"@    !@    @    !          4    (     0    $ "
+    "   !          X   !P    !@    @    &          4    (     0    @    !          D   !               \":F9F9F9FY/YJ9F"
+    "9F9F;D_        )$         D0        \"1         +D        !90 X   \"@    !@    @    !          4    (     0    $  "
+    "  !          X   !P    !@    @    &          4    (     0    @    !          D   !                                "
+    "  / _        \\#\\       #P/P                                X   !     !@    @    &          4    (     0    (    "
+    "!          D    0                      !90 X   !     !@    @    &          4    (     0    (    !          D    0 "
+    "                         X    X    !@    @    &          4    (     0    $    !          D    (               .   "
+    " .     8    (    !@         %    \"     $    !     0         )    \"               #@   #     &    \"     8       "
+    "  !0    @               $         \"0         .    ,     8    (    !@         %    \"                0         )  "
+    "        X   !(    !@    @    &          4    (     0    ,    !          D    8    5GVNMF)_[S]>2\\@'/9OK/S)5,\"JI$Y"
+    " _#@   #     &    \"     0         !0    @    !     0    $         $  ! \"T    .    .     8    (    !@         %  "
+    "  \"     $    !     0         )    \"            /@_#@   #     &    \"     0         !0    @    !     0    $      "
+    "   $  ! %(    .    .     8    (    !@         %    \"     $    !     0         )    \"            !1 #@   '     & "
+    "   \"     $         !0    @    !     0    $         #@   $     &    \"     8         !0    @    !     @    $      "
+    "   \"0   !                       %E #@   '     &    \"     $         !0    @    !     0    $         #@   $     & "
+    "   \"     8         !0    @    !     @    $         \"0   !                          #@   !@$   &    \"     (     "
+    "    !0    @    !    !0    $         !0 $  D    !    &P   &-H86YN96QS 'E,:6T      &QA8F5L4&]S        #@   #@    &  "
+    "  \"     8         !0    @    !     0    $         \"0    @            40 X   !     !@    @    &          4    (  "
+    "   0    (    !          D    0            \\+\\       #P/PX    P    !@    @    $          4    (     0    (    !  "
+    "       !   @!43   #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            00 X   !   "
+    "  !@    @    &          4    (     0    (    !          D    0    FIF9F9F9N;^:F9F9F9GQ/PX    P    !@    @    $    "
+    "      4    (     0    (    !         !   @!43   #@   #@    &    \"     8         !0    @    !     0    $         \""
+    "0    @            (0 X   !     !@    @    &          4    (     0    (    !          D    0    FIF9F9F9N;^:F9F9F9G"
+    "Q/PX    P    !@    @    $          4    (     0    (    !         !   @!43   #@   #@    &    \"     8         !0  "
+    "  @    !     0    $         \"0    @             0 X   !     !@    @    &          4    (     0    (    !         "
+    " D    0    FIF9F9F9N;^:F9F9F9GQ/PX    P    !@    @    $          4    (     0    (    !         !   @!43   #@   #@"
+    "    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    &          4"
+    "    (     0    (    !          D    0    FIF9F9F9N;^:F9F9F9GQ/PX    P    !@    @    $          4    (     0    (  "
+    "  !         !   @!43   #@   &@!   &    \"     (         !0    @    !     0    $         !0 $  D    !    )    &1I<W"
+    "!4:6UE &1I<W!-;V1E &UI;E1I;64  &UA>%1I;64        .    0     8    (    !@         %    \"     $    \"     0        "
+    " )    $                       64 .    .     8    (    !@         %    \"     $    !     0         )    \"         "
+    "   / _#@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @   "
+    " &          4    (     0    $    !          D    (            64 .    H $   8    (     @         %    \"     $    "
+    "!     0         %  0 #@    $    X    86-T:79E1&ES<$ED> !T:6UE4F%N9V4      &YA;64             9&ES<&QA>5)A;F=E   . "
+    "   6     8    (    !@         %    \"     $    %     0         )    *            !1         $$         (0         "
+    "!         \\#\\.    0     8    (    !@         %    \"     $    \"     0         )    $                       64 ."
+    "    .     8    (    !          %    \"     $    '     0         0    !P   $=R;W5P(#$ #@   $     &    \"     8     "
+    "    !0    @    !     @    $         \"0   !                       %E #@   #@    &    \"     8         !0    @    !"
+    "     0    $         \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    ( "
+    "              .    @     8    (    $0         !          $ ! !-0T]3 0    @   !3:6=3=6ET90X   !(    !@    @    -   "
+    "       4    (    !@    $    !          8    8        W0(    !     0    $    #    #@   )@0   &    \"     D         "
+    "!0    @    !    :!    $          @   &@0     4E-      X   #(#P  !@    @    \"          4    (     0    $    !     "
+    "     4 !  %     0    4   !-0T]3      X   \" #P  !@    @    1          $          0 $ $U#3U,!    #0   $9I;&57<F%P<&"
+    "5R7U\\    .    0 \\   8    (     0         %    \"    !8    !     0         .    * ,   8    (    \"0         %    "
+    "\"    /@\"   !     0         \"    ^ (   (    -    L    /    #P    L $  +@\"  #X @            !'<F]U<', 3F%M90!3:6"
+    "=N86QS %A$871A %E$871A %-I9U-U:71E4VEG;F%L %5S97)$871A %1I;65286YG90!3:6=3=6ET94=R;W5P $%C=&EV95-I9VYA; !297%U:7)E"
+    ";65N=$EN9F\\ 4VEG4W5I=&4 06-T:79E1W)O=7                                     &                    \"0              "
+    "      P                                               ,                    !    !P    (                    \"    !"
+    "@    $                    #     0    $                    $     @    $                    %     P    $            "
+    "        &    !     $                    '    !0               0    $    !    $@    ,    \"     0         #     0  "
+    " !     (     0   !$    #     @    $    !    !     $    \"    !0    $    #     P    (    !    !     0    !    !0   "
+    " 4    !    !@    ,    \"     0    <    $     0    @    %     0    D    #     @    $    *    !     $    +    !0    "
+    "$    ,     P    (    !    #0    0    !    #@    4    !    #P                                                      "
+    "                                   .          X    X    !@    @    $          4    (     0    <    !         !    "
+    " '    1W)O=7 @,0 .    ,     8    (    !          %    \"     $    !     0         0  $ 00    X   !8    !@    @    "
+    "&          4    (     0    4    !          D    H              \":F9F9F9FY/P      P%)       # 4D        !90 X   !8"
+    "    !@    @    &          4    (     0    4    !          D    H            \\#\\       #P/P       / _            "
+    "          X    P    !@    @    $          4    (     0    $    !         !   0!\"    #@   &     &    \"     8     "
+    "    !0    @    !    !@    $         \"0   #                       !1         %$       (!!0       @$%         64 . "
+    "   8     8    (    !@         %    \"     $    &     0         )    ,                                             "
+    "          \\#\\       #P/PX    P    !@    @    $          4    (     0    $    !         !   0!#    #@   )@    &  "
+    "  \"     8         !0    @    !    #0    $         \"0   &@                      \"1         )$         D0        "
+    "\"9         +D         Y0       @$%       \" 04#-S,S,S(Q%0       P%)       # 4D        !90 X   \"8    !@    @    &"
+    "          4    (     0    T    !          D   !H                        @         \"         \\#\\       #P/P     "
+    "  / _        \\#\\       #P/P                                       / _        \\#\\.    ,     8    (    !        "
+    "  %    \"     $    !     0         0  $ 1     X   !P    !@    @    &          4    (     0    @    !          D   "
+    "!               \":F9F9F9FY/YJ9F9F9F;D_        )$         D0        \"1         +D        !90 X   !P    !@    @   "
+    " &          4    (     0    @    !          D   !                                  / _        \\#\\       #P/P    "
+    "                            X    P    !@    @    $          4    (     0    $    !         !   0!2    #@   $     &"
+    "    \"     8         !0    @    !     @    $         \"0   !                       %E #@   $     &    \"     8    "
+    "     !0    @    !     @    $         \"0   !                          #@   %@    &    \"     T         !0    @    "
+    "*     0    $         !@   \"@       #= @    $    %     P    0    %    !@    <    !    #@   $     &    \"     8    "
+    "     !0    @    !     @    $         \"0   !                       %E #@   $@    &    \"     T         !0    @    "
+    "&     0    $         !@   !@       #= @    $    !     @    (    .    . 4   8    (     0         %    \"     0    !"
+    "     0         .    .     8    (     @         %    \"     $          0         %  0  0    $         #@   $ !   & "
+    "   \"     (         !0    @    !     0    $         !0 $  D    !    )    $YA;64      %A$871A     %E$871A     %5S97"
+    ")$871A       .    ,     8    (    !          %    \"                0         0          X    P    !@    @    &   "
+    "       4    (               !          D         #@   #     &    \"     8         !0    @               $         "
+    "\"0         .    ,     8    (    !@         %    \"                0         )          X    0 @  !@    @    \"   "
+    "       4    (     0    $    !          4 !  0     0   &    !.86UE                4VEG;F%L<P           $%C=&EV95-I9"
+    "VYA;     !297%U:7)E;65N=$EN9F\\ 57-E<D1A=&$          %1I;65286YG90         .    ,     8    (    !          %    \""
+    "                0         0          X   !(    !@    @    -          4    (    !0    $    !          8    4       "
+    " W0(               $         #@   #     &    \"     8         !0    @               $         \"0         .    ,  "
+    "   8    (    !          %    \"                0         0          X    P    !@    @    &          4    (        "
+    "       !          D         #@   $     &    \"     8         !0    @    !     @    $         \"0   !              "
+    "         \"1 #@   &@!   &    \"     (         !0    @    !     0    $         !0 $  P    !    ,    $YA;64         "
+    " $=R;W5P<P       $%C=&EV94=R;W5P %5S97)$871A      X    P    !@    @    $          4    (               !         !"
+    "          #@   $@    &    \"     T         !0    @    %     0    $         !@   !0       #= @               @     "
+    "    .    .     8    (    !@         %    \"     $    !     0         )    \"            / _#@   #     &    \"     "
+    "8         !0    @               $         \"0         .    B     8    (    \"0         %    \"     $   !8     0   "
+    "      \"    6      !24T     #@   $@    &    \"     (         !0    @    !     0    $         !0 $  4    !    !0   "
+    "$U#3U,     #@         "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    R ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    .     8    (    !@         %    \"     $    !"
+    "     0         )    \"         !  @A #@   #@    &    \"     8         !0    @    !     0    $         \"0    @    "
+    "     $,!?0 X    P    !@    @    &          4    (               !          D         "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    P H   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I9"
+    "%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &1"
+    "A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                     "
+    "  .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   #@ @  !@    @    \"          4 "
+    "   (     0    $    !          4 !  *     0   %H   !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(   "
+    "   &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X           .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (            \\/\\.    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"            /!_#@   $@    &    \"     8         !0    @  "
+    "  !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $ "
+    "   !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#"
+    "\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @           #P/PX   \"P 0  !@    @    \"          4    (     0    "
+    "$    !          4 !  +     0   #<   !C:&%N;F5L<P   'E,:6T         ;&%B96Q0;W,   !L86)E;$@      &QA8F5L4&%T8V@   X "
+    "   X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    0     8    (    !@      "
+    "   %    \"     $    \"     0         )    $            !3         .4 .    ,     8    (    !          %    \"     $"
+    "    \"     0         0  ( 5$P   X    X    !@    @    &          4    (     0    $    !          D    (        ( \""
+    "XE$ .    .     8    (    !@         %    \"     $    !     0         )    \"        $  Q)% #@   &@\"   &    \"    "
+    " (         !0    @    !     0    $         !0 $  X    !    8@   &1I<W!4:6UE        9&ES<$UO9&4       !M:6Y4:6UE   "
+    "      &UA>%1I;64         869T97)&:6YA;%-T<@!S86UP;&54:6UE     'IE<F]#<F]S<P              #@   $     &    \"     8 "
+    "        !0    @    !     @    $         \"0   !                      P&) #@   #@    &    \"     8         !0    @ "
+    "   !     0    $         \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D  "
+    "  (               .    .     8    (    !@         %    \"     $    !     0         )    \"           P&) #@   $   "
+    "  &    \"     0         !0    @    !    \"P    $         $     L   !%>'1R87!O;&%T90      #@   #@    &    \"     8 "
+    "        !0    @    !     0    $         \"0    @               X    P    !@    @    $          4    (     0    (  "
+    "  !         !   @!O;@  #@   ( !   &    \"     (         !0    @    !     0    $         !0 $  X    !    .    &%C=&"
+    "EV941I<W!)9'@ =&EM95)A;F=E      !N86UE             &1I<W!L87E286YG90  #@   #@    &    \"     8         !0    @    "
+    "!     0    $         \"0    @           #P/PX   !     !@    @    &          4    (     0    (    !          D    0"
+    "                     ,!B0 X    X    !@    @    $          4    (     0    <    !         !     '    1W)O=7 @,0 .  "
+    "  0     8    (    !@         %    \"     $    \"     0         )    $                     # 8D .    .     8    (  "
+    "  !@         %    \"     $    !     0         )    \"            / _#@   #@    &    \"     8         !0    @    ! "
+    "    0    $         \"0    @               X   \"     !@    @    1          $          0 $ $U#3U,!    \"    %-I9U-U"
+    ":71E#@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !     0    ,    . "
+    "   $ L   8    (    \"0         %    \"     $   #@\"@   0         \"    X H    !24T     #@   $ *   &    \"     (   "
+    "      !0    @    !     0    $         !0 $  4    !    !0   $U#3U,     #@   /@)   &    \"    !$          0         "
+    "!  0 34-/4P$    -    1FEL95=R87!P97)?7P    X   \"X\"0  !@    @    !          4    (    \"@    $    !          X   "
+    " ( @  !@    @    )          4    (    V $   $    !          (   #8 0   @    T   \"P    \\    /    !0 0  N $  -@!  "
+    "           $=R;W5P<P!.86UE %-I9VYA;', 6$1A=&$ 641A=&$ 4VEG4W5I=&53:6=N86P 57-E<D1A=&$ 5&EM95)A;F=E %-I9U-U:71E1W)O"
+    "=7  06-T:79E4VEG;F%L %)E<75I<F5M96YT26YF;P!3:6=3=6ET90!!8W1I=F5'<F]U<                                     8       "
+    "             )                    #                                                P                    $    #    "
+    " @                    (    \"     0                    ,    !               !     0    $    &     P    (    !     "
+    "     ,    !    !     @    !    !0    ,    \"     0    $    $     0    (    %     0    ,                           "
+    "                    X         #@   #@    &    \"     0         !0    @    !    !P    $         $     <   !'<F]U<\""
+    " Q  X    X    !@    @    $          4    (     0    @    !         !     (    4VEG;F%L(#$.    8     8    (    !@  "
+    "       %    \"     $    &     0         )    ,                     \" 5D       (!60       P%=       # 5T       ,!B"
+    "0 X   !@    !@    @    &          4    (     0    8    !          D    P                                 #1       "
+    "  -$                      #@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $"
+    "    !     P    $    .    0     8    (    !@         %    \"     $    \"     0         )    $                     #"
+    " 8D .    2     8    (    #0         %    \"     8    !     0         &    &        -T\"     0    $    \"     @    "
+    "X    X!0  !@    @    !          4    (    !     $    !          X    X    !@    @    \"          4    (     0     "
+    "    !          4 !  !     0         .    0 $   8    (     @         %    \"     $    !     0         %  0 \"0    $"
+    "    D    3F%M90      6$1A=&$     641A=&$     57-E<D1A=&$       X    P    !@    @    $          4    (             "
+    "  !         !          #@   #     &    \"     8         !0    @               $         \"0         .    ,     8  "
+    "  (    !@         %    \"                0         )          X    P    !@    @    &          4    (              "
+    " !          D         #@   ! \"   &    \"     (         !0    @    !     0    $         !0 $ !     !    8    $YA;6"
+    "4               !3:6=N86QS            06-T:79E4VEG;F%L     %)E<75I<F5M96YT26YF;P!5<V5R1&%T80          5&EM95)A;F=E"
+    "          X    P    !@    @    $          4    (               !         !          #@   $@    &    \"     T      "
+    "   !0    @    %     0    $         !@   !0       #= @               0         .    ,     8    (    !@         %   "
+    " \"                0         )          X    P    !@    @    $          4    (               !         !          "
+    "#@   #     &    \"     8         !0    @               $         \"0         .    0     8    (    !@         %    "
+    "\"     $    \"     0         )    $                       )$ .    : $   8    (     @         %    \"     $    !   "
+    "  0         %  0 #     $    P    3F%M90          1W)O=7!S        06-T:79E1W)O=7  57-E<D1A=&$     #@   #     &    \""
+    "     0         !0    @               $         $          .    2     8    (    #0         %    \"     4    !     0"
+    "         &    %        -T\"               \"          X    X    !@    @    &          4    (     0    $    !      "
+    "    D    (            \\#\\.    ,     8    (    !@         %    \"                0         )          X   \"(    "
+    "!@    @    )          4    (     0   %@    !          (   !8      %)30     .    2     8    (     @         %    \""
+    "     $    !     0         %  0 !0    $    %    34-/4P     .          "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    & $   8    (     @         %    \"     $    !     0         %  0 !@    $    ,    3F%M90"
+    "  5F%L=64       X    P    !@    @    $          4    (     0    (    !         !   @!V:0  #@   )     &    \"    !$"
+    "          0         !  0 34-/4P$    2    4VEM=6QI;FLN4&%R86UE=&5R        #@   $@    &    \"     T         !0    @ "
+    "   &     0    $         !@   !@       #= @    $    !     0    $    .    P @   8    (    \"0         %    \"     $ "
+    "  \"0\"    0         \"    D @    !24T     #@   . '   &    \"     (         !0    @    !     0    $         !0 $  "
+    "4    !    !0   $U#3U,     #@   )@'   &    \"    !$          0         !  0 34-/4P$    -    1FEL95=R87!P97)?7P    X"
+    "   !8!P  !@    @    !          4    (    \"@    $    !          X   !H 0  !@    @    )          4    (    . $   $ "
+    "   !          (    X 0   @    D   !X    F    )@   #(    * $  #@!             %9A;'5E $-O9&5R26YF;P!$97-C<FEP=&EO;@"
+    "!$871A5'EP90!-:6X 36%X $1O8U5N:71S %!A<F%M971E<@!3:6UU;&EN:P                                D    (                "
+    "                               !                     0    $               <    !     0         \"     0    $    # "
+    "    0    (    $     0    ,    %     0    0    &     0    4    '     0    8                         #@         .   "
+    " .     8    (    !@         %    \"     $    !     0         )    \"            (Y #@   *@#   &    \"    !$       "
+    "   0         !    !@   &AA;F1L90   0   !(   !3:6UU;&EN:RY#;V1E<DEN9F\\        .    6 ,   8    (     0         %   "
+    " \"     0    !     0         .    & (   8    (    \"0         %    \"    .@!   !     0         \"    Z $   $    0 "
+    "   \\    \" !   H 0  < $  . !  #H 0            !3:6UU;&EN:P!#;V1E<DEN9F\\ 4W1O<F%G94-L87-S $%U=&\\ 5'EP95%U86QI9FE"
+    "E<@  06QI87, 06QI9VYM96YT $-30U!A8VMA9V5.86UE %!A<F%M971E<D]R4VEG;F%L %!A<F%M971E<@!#=7-T;VU3=&]R86=E0VQA<W, 1&5F8"
+    "75L= !#=7-T;VU!='1R:6)U=&5S %-I;75L:6YK0U-# $%T=')I8D-L87-S7U-I;75L:6YK7T1E9F%U;'0                            !   "
+    "  @              #P   !                                                           0                    $          "
+    "@                                         (     P         $    !0         &    !P         &    \"     $         \""
+    "0         !    \"@         +    #          -    #@    $    !                    #@   '@    &    \"     $         !"
+    "0    @    !     0    $         #@   $@    &    \"     T         !0    @    %     0    $         !@   !0       #= @"
+    "    $    !     0         .    .     8    (    !@         %    \"     $    !     0         )    \"            /\"_#"
+    "@   $@    &    \"     T         !0    @    %     0    $         !@   !0       #= @    $    !     @         .    , "
+    "    8    (    !          %    \"                0         0          X    P    !@    @    $          4    (     0 "
+    "   0    !         !  ! !A=71O#@   #     &    \"     8         !0    @               $         \"0         .    ,  "
+    "   8    (    !@         %    \"                0         )          X    P    !@    @    $          4    (        "
+    "       !         !          #@   *@    &    \"     $         !0    @    \"     0    $         #@   #@    &    \"  "
+    "   (         !0    @    !          $         !0 $  $    !          X    X    !@    @    \"          4    (     0  "
+    "       !          4 !  !     0         .    F     8    (    \"0         %    \"     $   !H     0         \"    :  "
+    "    !24T     #@   %@    &    \"     (         !0    @    !     0    $         !0 $  <    !    #@   $U#3U,   !H86YD"
+    ";&4    .          X         "
+  }
+}
